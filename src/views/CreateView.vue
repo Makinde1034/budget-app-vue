@@ -12,7 +12,7 @@
         v-model="createBudgetRequestData.amount"
         class="input mb-6"
         type="text"
-        placeholder="Budget Amount "
+        placeholder="Budget Amount"
       />
       <input
         v-model="createBudgetRequestData.startDate"
@@ -28,6 +28,20 @@
         onfocus="(this.type='date')"
         placeholder="End date"
       />
+      <p class="text-white mt-5">Customize budget</p>
+      <div class="flex">
+        <div class="mr-5 mt-5 cursor-pointer" v-for="(item, index) in budgetColors" :key="index">
+          <div
+            @click="handleColorSelection(index)"
+            :class="` p-1 ${
+              selectedColorIndex === index &&
+              'rounded-full border border-primaryGreen   bg-primaryBlack '
+            }`"
+          >
+            <div :style="{ backgroundColor: item }" class="h-6 w-6 rounded-full" />
+          </div>
+        </div>
+      </div>
       <Button :disabled="isButtonDisabled" width="100%" text="Submit" />
     </form>
   </div>
@@ -51,7 +65,9 @@ export default defineComponent({
         startDate: '',
         endDate: '',
         name: ''
-      }
+      },
+      budgetColors: ['#F34F09', '#5433FF', '#FFE000', '#c31432'],
+      selectedColorIndex: 0
     }
   },
   setup() {
@@ -67,8 +83,12 @@ export default defineComponent({
     createBudgetHandler() {
       this.mutate({
         ...this.createBudgetRequestData,
-        amount: Number(this.createBudgetRequestData.amount)
+        amount: Number(this.createBudgetRequestData.amount),
+        color: this.budgetColors[this.selectedColorIndex]
       })
+    },
+    handleColorSelection(index: number) {
+      this.selectedColorIndex = index
     }
   },
   computed: {

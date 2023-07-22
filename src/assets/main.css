@@ -37,11 +37,19 @@ a,
 @tailwind components;
 @tailwind utilities;
 
-body{
-  background-color: #181818;
+
+@font-face {
+  font-family: 'Axiforma';
+  src: url('../assets/fonts/Axiforma-Regular.ttf') format('truetype');
+  font-style: normal;
 }
 
-.gr{
+body {
+  background-color: #181818;
+  font-family: 'Axiforma'
+}
+
+.gr {
   background-color: #ffffff0c;
 }
 
@@ -49,15 +57,29 @@ body{
   filter: invert(1);
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 @layer utilities {
   .budgetCard {
-    @apply  w-[100%] p-5 border border-primaryGreen cursor-pointer rounded-3xl
+    @apply w-[100%] p-5 border border-primaryGreen cursor-pointer rounded-3xl;
   }
-  .input{
-    @apply h-[60px] w-[100%] px-5 text-white rounded-3xl border outline-none border-primaryGreen bg-inherit
+  .input {
+    @apply h-[60px] w-[100%] px-5 text-white rounded-[30px] border outline-none border-primaryGreen bg-inherit;
   }
-  .header{
-    @apply text-white text-xl font-bold
+  .header {
+    @apply text-white text-xl font-bold;
   }
-  
+  .page {
+    @apply h-[100vh] flex flex-col px-5 pt-20 items-center;
+  }
+  .flex-center-x {
+    @apply flex justify-center;
+  }
+  .flex-center-y {
+    @apply flex flex-col items-center;
+  }
 }

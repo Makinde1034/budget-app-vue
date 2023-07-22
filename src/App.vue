@@ -2,6 +2,7 @@
 import { RouterLink, RouterView } from 'vue-router'
 import { useQueryProvider } from "vue-query";
 
+
 useQueryProvider();
 </script>
 

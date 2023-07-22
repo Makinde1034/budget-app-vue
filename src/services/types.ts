@@ -11,7 +11,10 @@ export type BudgetCardProps = {
   description: string
   endDate: string
   startDate: string
-}[]
+  color:string
+}
+
+export type FetchUserBudgetResponse = BudgetCardProps[]
 
 export type CreateBudegtRequest = {
   name : string,
@@ -19,4 +22,11 @@ export type CreateBudegtRequest = {
   startDate : string,
   endDate : string,
   description ?: string
+  color:string
+}
+
+export type updateBudgetRequest = {
+  amount : string,
+  title : string,
+  id:string
 }

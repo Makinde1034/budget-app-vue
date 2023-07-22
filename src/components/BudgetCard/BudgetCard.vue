@@ -1,19 +1,19 @@
 <template>
   <div @click="createBudgetHandler" v-if="cardIndex === lastIndex">
     <div class="budgetCard flex justify-center items-center h-[225px]">
-      <img class="h-6" src="../../assets/addicon.svg" alt="">
+      <img class="h-6" src="../../assets/addicon.svg" alt="" />
     </div>
   </div>
   <div @click="handleActiviteisNavigation" v-else>
     <div class="budgetCard">
       <h3 class="text-white font-medium text-xl mb-1">{{ name }}</h3>
-      <p class="text-[#DCDCDC] text-sm mb-12">{{ computedDaysLeft }}</p>
+      <p class="text-[#DCDCDC] text-sm mb-12">{{ computedDaysLeft }} days left</p>
       <p class="text-white font-medium">{{ amountRemaining }}</p>
       <p class="text-[#DCDCDC]">remaining</p>
       <div class="h-6 rounded-xl mt-5 w-[100%] gr">
         <div
-          :style="{ width: amountLeftInPercentage() }"
-          :class="`bg-[#F39609] h-[100%] ${getBarRightBorderRadius()}  rounded-tl-3xl rounded-bl-3xl`"
+          :style="{ width: amountLeftInPercentage(), backgroundColor: color }"
+          :class="` h-[100%] ${getBarRightBorderRadius()}  rounded-tl-3xl rounded-bl-3xl`"
         ></div>
       </div>
     </div>
@@ -25,24 +25,24 @@ import { defineComponent } from 'vue'
 import { getDaysLeft } from '../../helpers/date'
 import { numberWithCommas } from '../../helpers/number'
 
-
-
 export default defineComponent({
   name: 'BudgetCard',
   props: {
     name: String,
     daysLeft: String,
     endDate: String,
-    startStart: String,
+    startDate: String,
     amount: Number,
     amountSpent: String,
     cardIndex: Number,
     lastIndex: Number,
-    ID: String
+    ID: String,
+    color: String
   },
+
   computed: {
     computedDaysLeft() {
-      return getDaysLeft('07-4-2023','08-10-2023')
+      return getDaysLeft(this.startDate, this.endDate)
     },
     amountRemaining() {
       const amt = this.amount - this.amountSpent || 0
@@ -64,10 +64,10 @@ export default defineComponent({
       }
       return 'rounded-tr-3xl rounded-br-3xl'
     },
-    createBudgetHandler(){
+    createBudgetHandler() {
       this.$router.push('/create')
     },
-    handleActiviteisNavigation(){
+    handleActiviteisNavigation() {
       this.$router.push(`/activities/${this.ID}`)
     }
   }
