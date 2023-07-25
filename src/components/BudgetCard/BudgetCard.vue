@@ -49,7 +49,8 @@ export default defineComponent({
       return `₦${numberWithCommas(amt)}`
     },
     getAmountLeftPercentage() {
-      const percentage = Number(100) - Number((this?.amountSpent! / this?.amount!) * 100)
+      const percentage =
+        (Number(100) as number) - Number((this?.amountSpent! / this?.amount!) * 100)
 
       return percentage
     }

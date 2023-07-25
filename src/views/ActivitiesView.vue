@@ -48,10 +48,10 @@
     <UpdateBudgetModal
       :refetchActivities="refetchActivities"
       :refetchBudget="refetchBudget"
-      :budgetID="budgetID"
+      :budgetID="(budgetID as string)"
       :closeModal="closeModal"
       :isModalOpen="isModalOpen"
-      :amountRemaining="budgetData.amount - Number(budgetData.amountSpent)"
+      :amountRemaining="budgetData?.amount - Number(budgetData?.amountSpent)"
     />
   </div>
 </template>
@@ -126,7 +126,7 @@ export default defineComponent({
   computed: {
     getAmountRemaining() {
       return formatNumber(
-        numberWithCommas(this?.budgetData?.amount! - this?.budgetData?.amountSpent!)
+        numberWithCommas((this?.budgetData?.amount! - this?.budgetData?.amountSpent!) as any)
       ).display
     },
 
