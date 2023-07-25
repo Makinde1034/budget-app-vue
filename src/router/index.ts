@@ -4,7 +4,7 @@ import CreateView from '../views/BudgetView.vue'
 import LoginView from '../views/Login.vue'
 import api from '../services/index'
 
-const handleAuthorizedRouteNavigation =async (to:RouteLocationNormalized,from:RouteLocationNormalized) => {
+const handleAuthorizedRouteNavigation =async (to:any,from:any) => {
   const isAuthenticated = await api.verifyToken()
   if(!isAuthenticated.data.isTokenValid){
   return { name: 'register' }
