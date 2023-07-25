@@ -77,7 +77,7 @@ export default defineComponent({
   },
   methods: {
     submitHandler() {
-      if (Number(this?.updateBudgetInput.amount) > this.amountRemaining) {
+      if (Number(this?.updateBudgetInput?.amount || 0) > this.amountRemaining || 0) {
         this.error =' Oops. Amount entered is greater than amount remaining to spend.'
         return
       }

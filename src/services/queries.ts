@@ -12,7 +12,7 @@ export const fetchBudgets = async (): Promise<FetchUserBudgetResponse> => {
     const res = await api.getUserBudgets()
     console.log(res.data)
     return res.data
-  } catch (err) {
+  } catch (err:any) {
     throw new Error(err)
   }
 }
@@ -21,7 +21,7 @@ export const createBudget = async (data: CreateBudegtRequest) => {
   try {
     const res = await api.createUserBudgets(data)
     return res
-  } catch (err) {
+  } catch (err:any) {
     throw new Error(err)
   }
 }
@@ -30,7 +30,7 @@ export const fetchBudgetActivities = async (id: string) => {
   try {
     const res = await api.getBudgetActivities(id)
     return res.data
-  } catch (err) {
+  } catch (err:any) {
     throw new Error(err)
   }
 }
@@ -40,7 +40,7 @@ export const fetchBudget = async (id: string): Promise<BudgetCardProps> => {
     const res = await api.getBudget(id)
     console.log(res.data)
     return res.data
-  } catch (err) {
+  } catch (err:any) {
     throw new Error(err)
   }
 }
@@ -50,7 +50,7 @@ export const updateBudget = async (data: updateBudgetRequest) => {
     const res = await api.updateBudget(data)
     console.log(res.data)
     return res.data
-  } catch (err) {
+  } catch (err:any) {
     throw new Error(err)
   }
 }

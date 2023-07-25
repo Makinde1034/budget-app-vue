@@ -41,7 +41,7 @@ export default defineComponent({
   },
   methods: {
     clickHandler() {
-      this?.onClick()
+      this?.onClick?.()
     }
   }
 })

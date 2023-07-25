@@ -2,7 +2,7 @@
   <div class="page z-30">
     <div v-if="!error" class="lg:w-[30%] z-30 w-full">
       <div class="w-full z-30 flex-center-y">
-        <h3 class="header">{{ budgetData.name }}</h3>
+        <h3 class="header">{{ budgetData?.name }}</h3>
         <div class="flex-center-x my-5 items-center rounded-3xl p-3 gr">
           <p class="text-white">{{ computedDaysLeft }} days Left</p>
         </div>
@@ -18,7 +18,7 @@
         </div>
         <div class="h-6 rounded-xl mt-5 w-[100%] gr">
           <div
-            :style="{ width: amountLeftInPercentage(), backgroundColor: budgetData.color }"
+            :style="{ width: amountLeftInPercentage(), backgroundColor: budgetData?.color }"
             :class="` h-[100%]  ${getBarRightBorderRadius()}  rounded-tl-3xl rounded-bl-3xl`"
           ></div>
         </div>
@@ -131,7 +131,7 @@ export default defineComponent({
     },
 
     getAmountSpent() {
-      return formatNumber(numberWithCommas(this.budgetData.amountSpent || 0))?.display
+      return formatNumber(numberWithCommas(this.budgetData?.amountSpent || 0))?.display
     },
 
     computedDaysLeft() {
@@ -139,7 +139,7 @@ export default defineComponent({
     },
     getAmountLeftPercentage() {
       const percentage =
-        100 - (this.budgetData?.amountSpent || 0 / this?.budgetData?.amount || 0) * 100
+        100 - (this?.budgetData?.amountSpent || 0 / this?.budgetData?.amount || 0) * 100
 
       return percentage
     }
