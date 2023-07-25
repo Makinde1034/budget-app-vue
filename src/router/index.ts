@@ -1,15 +1,17 @@
-import { createRouter, createWebHistory, RouteLocationNormalized } from 'vue-router'
+import { createRouter, createWebHistory, type RouteLocationNormalized } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import CreateView from '../views/BudgetView.vue'
 import LoginView from '../views/Login.vue'
 import api from '../services/index'
 
-const handleAuthorizedRouteNavigation =async (to:any,from:any) => {
+const handleAuthorizedRouteNavigation = async (
+  to: RouteLocationNormalized,
+  from: RouteLocationNormalized
+) => {
   const isAuthenticated = await api.verifyToken()
-  if(!isAuthenticated.data.isTokenValid){
-  return { name: 'register' }
+  if (!isAuthenticated.data.isTokenValid) {
+    return { name: 'register' }
   }
- 
 }
 
 const router = createRouter({
@@ -31,14 +33,13 @@ const router = createRouter({
     {
       path: '/budget',
       name: 'budget',
-      component: () => import( '../views/BudgetView.vue'),
-      beforeEnter: handleAuthorizedRouteNavigation,
-    
+      component: () => import('../views/BudgetView.vue'),
+      beforeEnter: handleAuthorizedRouteNavigation
     },
     {
       path: '/create',
       name: 'create',
-      component: () => import( '../views/CreateView.vue'),
+      component: () => import('../views/CreateView.vue'),
       beforeEnter: handleAuthorizedRouteNavigation
     },
     {
@@ -59,7 +60,5 @@ const router = createRouter({
     }
   ]
 })
-
-
 
 export default router

@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { CreateBudegtRequest, updateBudgetRequest, RegisterRequest } from './types'
+import type { CreateBudegtRequest, updateBudgetRequest, RegisterRequest } from './types'
 
 const token = localStorage.getItem('token')
 
