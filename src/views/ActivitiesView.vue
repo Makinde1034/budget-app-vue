@@ -126,7 +126,7 @@ export default defineComponent({
   computed: {
     getAmountRemaining() {
       return formatNumber(
-        numberWithCommas(Number(this?.budgetData?.amount!) - this?.budgetData?.amountSpent!)
+        numberWithCommas(Number(this?.budgetData?.amount!) - Number(this?.budgetData?.amountSpent!))
       ).display
     },
 
@@ -139,7 +139,7 @@ export default defineComponent({
     },
     getAmountLeftPercentage() {
       const percentage =
-        100 - (this?.budgetData?.amountSpent! || 0 / this?.budgetData?.amount! || 0) * 100
+        100 - (Number(this?.budgetData?.amountSpent!) || 0 / this?.budgetData?.amount! || 0) * 100
 
       return percentage
     }
