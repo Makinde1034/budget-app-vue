@@ -60,8 +60,8 @@ export const register = async (data: RegisterRequest) => {
     const res = await api.register(data)
     localStorage.setItem("token",res.data.token)
     return res.data
-  } catch (err) {
-    console.log(err)
+  } catch (err:any) {
+
     throw new Error(err.response.data.msg)
   }
 }
@@ -71,7 +71,7 @@ export const login = async (data: RegisterRequest) => {
     const res = await api.login(data)
     console.log(res.data)
     return res.data
-  } catch (err) {
+  } catch (err:any) {
     console.log(err)
     throw new Error(err.response.data.msg)
   }
