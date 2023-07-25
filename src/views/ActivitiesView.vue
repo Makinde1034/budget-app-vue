@@ -51,7 +51,7 @@
       :budgetID="(budgetID as string)"
       :closeModal="closeModal"
       :isModalOpen="isModalOpen"
-      :amountRemaining="budgetData?.amount - Number(budgetData?.amountSpent)"
+      :amountRemaining="budgetData?.amount! - Number(budgetData?.amountSpent!)"
     />
   </div>
 </template>
@@ -126,7 +126,7 @@ export default defineComponent({
   computed: {
     getAmountRemaining() {
       return formatNumber(
-        numberWithCommas((this?.budgetData?.amount! - this?.budgetData?.amountSpent!) as any)
+        numberWithCommas((this?.budgetData?.amount! - this?.budgetData?.amountSpent! as any))
       ).display
     },
 
@@ -139,7 +139,7 @@ export default defineComponent({
     },
     getAmountLeftPercentage() {
       const percentage =
-        100 - (this?.budgetData?.amountSpent || 0 / this?.budgetData?.amount || 0) * 100
+        100 - (this?.budgetData?.amountSpent! || 0 / this?.budgetData?.amount! || 0) * 100
 
       return percentage
     }
