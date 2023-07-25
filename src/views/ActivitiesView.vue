@@ -126,7 +126,7 @@ export default defineComponent({
   computed: {
     getAmountRemaining() {
       return formatNumber(
-        numberWithCommas((this?.budgetData?.amount! - this?.budgetData?.amountSpent! as any))
+        numberWithCommas(Number(this?.budgetData?.amount!) - this?.budgetData?.amountSpent!)
       ).display
     },
 
