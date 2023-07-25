@@ -6,7 +6,7 @@
   >
     <div>
       <div
-        @click="closeModal()!"
+        @click="closeModal?.()"
         class="bg-primaryBlack cursor-pointer flex-center-x items-center h-12 rounded-full mb-5 w-12"
       >
         <img class="h-5" src="../../assets/cancelIcon.svg" alt="" />
@@ -67,9 +67,9 @@ export default defineComponent({
     // update budget
     const { mutate, isLoading } = useMutation(updateBudget, {
       onSuccess: () => {
-        props?.refetchActivities()
-        props?.closeModal()
-        props?.refetchBudget()
+        props?.refetchActivities?.()
+        props?.closeModal?.()
+        props?.refetchBudget?.()
       }
     })
 
