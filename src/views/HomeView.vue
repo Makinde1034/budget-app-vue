@@ -28,7 +28,7 @@ export default defineComponent({
           Get started
         </button></router-link
       >
-      <img class="w-[900px] mt-10" src="../assets/hero.svg" alt="" />
+      <img class="w-[900px] mt-10" src="../assets/hero.svg" alt="hero-image" />
     </section>
   </div>
 </template>

@@ -1,4 +1,5 @@
 <template>
+  <Nav />
   <div class="h-[100vh] flex flex-col items-center pt-20 px-5">
     <section v-if="isLoading" class="lg:w-[35%] w-full">
       <div class="grid w-[100%] mt-5 gap-5 lg:grid-cols-2">
@@ -45,10 +46,11 @@ import { fetchBudgets } from '../services/queries'
 import { useQuery } from 'vue-query'
 import SkeletonLoader from '../components/Loaders/SkeletonLoader.vue'
 import { RouterLink } from 'vue-router'
+import Nav from '../components/Nav/Nav.vue'
 
 export default defineComponent({
   name: 'Budgets',
-  components: { Button, BudgetCard, SkeletonLoader },
+  components: { Button, BudgetCard, SkeletonLoader, Nav },
 
   setup() {
     const { isLoading, isError, data, error, isFetching } = useQuery('budgets', fetchBudgets, {
