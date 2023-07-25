@@ -130,14 +130,14 @@ export default defineComponent({
     },
 
     getAmountSpent() {
-      return formatNumber(numberWithCommas(this.budgetData.amountSpent)).display
+      return formatNumber(numberWithCommas(this.budgetData.amountSpent!)).display
     },
 
     computedDaysLeft() {
-      return getDaysLeft(this.budgetData.startDate, this.budgetData.endDate)
+      return getDaysLeft(this.budgetData.startDate!, this.budgetData.endDate!)
     },
     getAmountLeftPercentage() {
-      const percentage = 100 - (this.budgetData.amountSpent / this.budgetData.amount) * 100
+      const percentage = 100 - (this.budgetData.amountSpent! / this.budgetData.amount!) * 100
 
       return percentage
     }
