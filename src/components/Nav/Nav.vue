@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <img class="w-[900px] mt-10" src="../assets/logout.svg" alt="hero-image" />
+    <img class="w-[900px] mt-10" src="../../assets/logout.svg" alt="hero-image" />
   </nav>
 </template>
 
