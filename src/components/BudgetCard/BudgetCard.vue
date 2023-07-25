@@ -42,10 +42,10 @@ export default defineComponent({
 
   computed: {
     computedDaysLeft() {
-      return getDaysLeft(this.startDate, this.endDate)
+      return getDaysLeft(this.startDate || '', this.endDate || '')
     },
     amountRemaining() {
-      const amt = this.amount - this.amountSpent || 0
+      const amt = Number(this?.amount || 0) - Number(this?.amountSpent || 0)
       return `₦${numberWithCommas(amt)}`
     },
     getAmountLeftPercentage() {
