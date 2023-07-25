@@ -61,7 +61,7 @@ export default defineComponent({
   },
   computed: {
     tranformedBudgetData() {
-      return [...this.data, {} as any]
+      return [...this.data as any, {}]
     }
   },
   methods: {
