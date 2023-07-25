@@ -69,7 +69,7 @@ export const register = async (data: RegisterRequest) => {
 export const login = async (data: RegisterRequest) => {
   try {
     const res = await api.login(data)
-    console.log(res.data)
+    localStorage.setItem("token",res.data.token)
     return res.data
   } catch (err:any) {
     console.log(err)
