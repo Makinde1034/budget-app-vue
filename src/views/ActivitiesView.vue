@@ -44,7 +44,7 @@
         <Button :onClick="openModal" text="Update" />
       </div>
     </div>
-    <div v-else> An error occured</div>
+    <div v-else>An error occured</div>
     <UpdateBudgetModal
       :refetchActivities="refetchActivities"
       :refetchBudget="refetchBudget"
@@ -106,7 +106,7 @@ export default defineComponent({
         refetchOnWindowFocus: false
       }
     )
-   
+
     return {
       isLoading,
       isError,
@@ -125,19 +125,21 @@ export default defineComponent({
 
   computed: {
     getAmountRemaining() {
-      return formatNumber(numberWithCommas(this?.budgetData?.amount! - this?.budgetData?.amountSpent!))
-        .display
+      return formatNumber(
+        numberWithCommas(this?.budgetData?.amount! - this?.budgetData?.amountSpent!)
+      ).display
     },
 
     getAmountSpent() {
-      return formatNumber(numberWithCommas(this.budgetData.amountSpent!)).display
+      return formatNumber(numberWithCommas(this.budgetData.amountSpent || 0)).display
     },
 
     computedDaysLeft() {
-      return getDaysLeft(this.budgetData.startDate!, this.budgetData.endDate!)
+      return getDaysLeft(this.budgetData.startDate || '', this.budgetData.endDate || '')
     },
     getAmountLeftPercentage() {
-      const percentage = 100 - (this.budgetData.amountSpent! / this.budgetData.amount!) * 100
+      const percentage =
+        100 - (this.budgetData.amountSpent || 0 / this.budgetData.amount || 0) * 100
 
       return percentage
     }
