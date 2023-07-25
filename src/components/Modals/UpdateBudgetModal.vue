@@ -6,7 +6,7 @@
   >
     <div>
       <div
-        @click="closeModal"
+        @click="closeModal()"
         class="bg-primaryBlack cursor-pointer flex-center-x items-center h-12 rounded-full mb-5 w-12"
       >
         <img class="h-5" src="../../assets/cancelIcon.svg" alt="" />
@@ -36,7 +36,7 @@
     </div>
   </div>
 </template>
-<script>
+<script lang="ts" >
 import { updateBudget } from '@/services/queries'
 import { defineComponent } from 'vue'
 import { useMutation } from 'vue-query'
