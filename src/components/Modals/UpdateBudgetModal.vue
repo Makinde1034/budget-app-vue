@@ -31,7 +31,7 @@
           text="Submit"
           :loading="isLoading"
         />
-        <p class="text-xs text-white mt-5" v-if="error">{{ error }}</p>
+        <p class="text-xs text-center text-[#ff3333] mt-5" v-if="error">{{ error }}</p>
       </div>
     </div>
   </div>
@@ -49,17 +49,17 @@ export default defineComponent({
     return {
       updateBudgetInput: {
         title: '',
-        amount: ''
+        amount: 0
       },
      error:''
     }
   },
   props: {
     isModalOpen: Boolean,
-    closeModal: Boolean,
+    closeModal: Function,
     budgetID: String,
     refetchActivities: Function,
-    amountRemaining: String,
+    amountRemaining: Number,
     refetchBudget: Function
   },
 
@@ -78,7 +78,7 @@ export default defineComponent({
   methods: {
     submitHandler() {
       if (Number(this.updateBudgetInput.amount) > this.amountRemaining) {
-        this.error ='Amount entered is greater than amount remaining to spend.'
+        this.error =' Oops. Amount entered is greater than amount remaining to spend.'
         return
       }
       this.mutate({

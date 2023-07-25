@@ -1,5 +1,5 @@
 <script lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
 import { defineComponent } from 'vue'
 import { useQuery } from 'vue-query'
 
@@ -23,7 +23,7 @@ export default defineComponent({
         Stay on top of your spending habits with our user-friendly interface. Categorize expenses,
         set budgets, and monitor your financial progress
       </p>
-      <router-link to="/budget"
+      <router-link to="/register"
         ><button class="bg-primaryGreen text-white px-12 hover:opacity-70 py-3 rounded-3xl mt-5">
           Get started
         </button></router-link

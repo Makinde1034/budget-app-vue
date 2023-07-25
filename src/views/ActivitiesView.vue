@@ -1,6 +1,6 @@
 <template>
   <div class="page z-30">
-    <div class="lg:w-[30%] z-30 w-full">
+    <div v-if="!error" class="lg:w-[30%] z-30 w-full">
       <div class="w-full z-30 flex-center-y">
         <h3 class="header">{{ budgetData.name }}</h3>
         <div class="flex-center-x my-5 items-center rounded-3xl p-3 gr">
@@ -44,6 +44,7 @@
         <Button :onClick="openModal" text="Update" />
       </div>
     </div>
+    <div v-else> An error occured</div>
     <UpdateBudgetModal
       :refetchActivities="refetchActivities"
       :refetchBudget="refetchBudget"
@@ -105,7 +106,7 @@ export default defineComponent({
         refetchOnWindowFocus: false
       }
     )
-
+   
     return {
       isLoading,
       isError,

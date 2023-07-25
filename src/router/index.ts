@@ -1,8 +1,16 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory, RouteLocationNormalized } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import CreateView from '../views/BudgetView.vue'
+import LoginView from '../views/Login.vue'
+import api from '../services/index'
 
-
+const handleAuthorizedRouteNavigation =async (to:RouteLocationNormalized,from:RouteLocationNormalized) => {
+  const isAuthenticated = await api.verifyToken()
+  if(!isAuthenticated.data.isTokenValid){
+  return { name: 'register' }
+  }
+ 
+}
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -23,19 +31,35 @@ const router = createRouter({
     {
       path: '/budget',
       name: 'budget',
-      component: () => import( '../views/BudgetView.vue')
+      component: () => import( '../views/BudgetView.vue'),
+      beforeEnter: handleAuthorizedRouteNavigation,
+    
     },
     {
       path: '/create',
       name: 'create',
-      component: () => import( '../views/CreateView.vue')
+      component: () => import( '../views/CreateView.vue'),
+      beforeEnter: handleAuthorizedRouteNavigation
     },
     {
       path: '/activities/:id',
       name: 'activities',
-      component: () => import('../views/ActivitiesView.vue')
+      component: () => import('../views/ActivitiesView.vue'),
+      beforeEnter: handleAuthorizedRouteNavigation
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: () => import('../views/Register.vue')
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: () => import('../views/login.vue')
     }
   ]
 })
+
+
 
 export default router

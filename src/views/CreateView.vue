@@ -66,7 +66,7 @@ export default defineComponent({
         endDate: '',
         name: ''
       },
-      budgetColors: ['#F34F09', '#5433FF', '#FFE000', '#c31432'],
+      budgetColors: ['#F34F09', '#5433FF', '#FFE000', '#c31432'],   
       selectedColorIndex: 0
     }
   },
