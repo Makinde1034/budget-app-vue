@@ -44,7 +44,7 @@ export default defineComponent({
   },
   setup() {
     const router = useRouter()
-    const { mutate, data, isLoading, error } = useMutation(register, {
+    const { mutate, data, isLoading, error } = useMutation(register,  {
       onSuccess: () => {
         router.push('/budget')
       }

@@ -49,11 +49,7 @@ export default defineComponent({
 
     return { mutate, isLoading, data, error }
   },
-  watch: {
-    data(value) {
-      localStorage.setItem('token', value.token)
-    }
-  },
+
   methods: {
     login() {
       this.mutate(this.loginRequest)
