@@ -16,7 +16,7 @@
         class="input"
         type="password"
       />
-      <Button :loading="isLoading" width="100%" text="Register" />
+      <Button :loading="isLoading" width="100%" text="Login" />
       <p class="text-[#ff3333] mt-5 text-sm text-center" v-if="error">{{ error }}</p>
     </form>
   </div>

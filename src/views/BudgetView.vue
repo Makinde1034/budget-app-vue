@@ -54,7 +54,7 @@ export default defineComponent({
 
   setup() {
     const { isLoading, isError, data, error, isFetching } = useQuery('budgets', fetchBudgets, {
-      refetchOnWindowFocus: false
+     
     })
 
     return { isLoading, isError, data, error, isFetching }

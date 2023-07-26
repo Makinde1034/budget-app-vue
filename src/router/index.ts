@@ -9,8 +9,19 @@ const handleAuthorizedRouteNavigation = async (
   from: RouteLocationNormalized
 ) => {
   const isAuthenticated = await api.verifyToken()
+
   if (!isAuthenticated.data.isTokenValid) {
     return { name: 'register' }
+  }
+}
+
+const handleUnAuthorizedRouteNavigation = async (
+  to: RouteLocationNormalized,
+  from: RouteLocationNormalized
+) => {
+  const isAuthenticated = await api.verifyToken()
+  if (isAuthenticated.data.isTokenValid) {
+    return { name: 'budget' }
   }
 }
 
@@ -51,14 +62,18 @@ const router = createRouter({
     {
       path: '/register',
       name: 'register',
-      component: () => import('../views/Register.vue')
+      component: () => import('../views/Register.vue'),
+      beforeEnter: handleUnAuthorizedRouteNavigation
     },
     {
       path: '/login',
       name: 'login',
-      component: () => import('../views/Login.vue')
+      component: () => import('../views/Login.vue'),
+      beforeEnter: handleUnAuthorizedRouteNavigation
     }
   ]
 })
 
 export default router
+
+router.af
