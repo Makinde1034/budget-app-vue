@@ -1,10 +1,10 @@
 <template>
   <button
     :disabled="disabled"
-    @click="clickHandler"
+    @click="clickHandler()"
     :class="`bg-primaryGreen w-[${width}] py-${py} py-[15px] ${
       disabled ? 'opacity-70' : 'opacity-100'
-    } cursor-pointer text-white outline-none font-bold px-12 hover:opacity-70  rounded-3xl mt-5`"
+    } cursor-pointer text-white font-bold px-12 hover:opacity-70  rounded-3xl mt-5`"
   >
     <svg
       v-if="loading"
