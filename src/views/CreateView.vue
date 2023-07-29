@@ -42,7 +42,7 @@
           </div>
         </div>
       </div>
-      <Button :disabled="isButtonDisabled" width="100%" text="Submit" />
+      <Button :loading="isLoading" :disabled="isButtonDisabled" width="100%" text="Submit" />
     </form>
   </div>
 </template>
@@ -77,7 +77,7 @@ export default defineComponent({
         route.push('/budget')
       }
     })
-    return { mutate }
+    return { mutate,isLoading }
   },
   methods: {
     createBudgetHandler() {
