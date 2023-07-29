@@ -43,11 +43,17 @@ export default defineComponent({
     const router = useRouter()
     const { mutate, data, isLoading, error } = useMutation(login, {
       onSuccess: () => {
+        console.log(data)
         router.push('/budget')
       }
     })
 
     return { mutate, isLoading, data, error }
+  },
+  watch: {
+    data(value) {
+      localStorage.setItem('token', value.token)
+    }
   },
 
   methods: {

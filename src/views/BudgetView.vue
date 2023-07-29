@@ -14,6 +14,10 @@
       <p class="text-white font-light">Start creating budgets and tracking your finances</p>
       <router-link to="/create"> <Button text="Create budget" /></router-link>
     </section>
+    <section v-else-if="isError">
+      <p>An error occured</p>
+      v
+    </section>
     <section v-else class="xl:w-[35%] lg:w-[60%] w-full">
       <h3 class="header">Your Budgets</h3>
       <div class="grid w-[100%] mt-5 gap-5 md:grid-cols-2">
@@ -54,9 +58,17 @@ export default defineComponent({
   components: { Button, BudgetCard, SkeletonLoader, Nav },
 
   setup() {
-    const { isLoading, isError, data, error, isFetching } = useQuery('budgets', fetchBudgets, {})
+    const { isLoading, isError, data, error, isFetching, refetch } = useQuery(
+      'budgets',
+      fetchBudgets,
+      {
+        onError: () => {
+          console.log("error")
+        }
+      }
+    )
 
-    return { isLoading, isError, data, error, isFetching }
+    return { isLoading, isError, data, error, isFetching, refetch }
   },
   computed: {
     transformedBudgetData() {
@@ -70,6 +82,9 @@ export default defineComponent({
   },
   created() {
     // handleAuthorizedRouteNavigation()
+  },
+  mounted() {
+    this.refetch()
   }
 })
 </script>

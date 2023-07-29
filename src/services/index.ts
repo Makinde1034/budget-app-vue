@@ -3,10 +3,12 @@ import type { CreateBudegtRequest, updateBudgetRequest, RegisterRequest } from '
 
 const token = localStorage.getItem('token')
 
+const BASE_URL = 'https://budgetbuddy-ou7t.onrender.com'
+
 export default {
   getUserBudgets() {
     return axios({
-      url: 'http://localhost:4000/get-budgets',
+      url: `${BASE_URL}/get-budgets`,
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -14,7 +16,7 @@ export default {
   },
   createUserBudgets(data: CreateBudegtRequest) {
     return axios({
-      url: 'http://localhost:4000/create-budget',
+      url: `${BASE_URL}/create-budget`,
       method: 'POST',
       data,
       headers: {
@@ -24,7 +26,7 @@ export default {
   },
   getBudgetActivities(id: string) {
     return axios({
-      url: `http://localhost:4000/budget-activities/${id}`,
+      url: `${BASE_URL}/budget-activities/${id}`,
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -32,7 +34,7 @@ export default {
   },
   getBudget(id: string) {
     return axios({
-      url: `http://localhost:4000/fetch-budget/${id}`,
+      url: `${BASE_URL}/fetch-budget/${id}`,
       headers: {
         Authorization: `Bearer ${token}`
       }
@@ -40,7 +42,7 @@ export default {
   },
   updateBudget(data: updateBudgetRequest) {
     return axios({
-      url: `http://localhost:4000/update-budget/${data.id}`,
+      url: `${BASE_URL}/update-budget/${data.id}`,
       method: 'POST',
       data: {
         title: data.title,
@@ -53,21 +55,21 @@ export default {
   },
   register(data: RegisterRequest) {
     return axios({
-      url: `http://localhost:4000/register`,
+      url: `${BASE_URL}/register`,
       method: 'POST',
       data
     })
   },
   login(data: RegisterRequest) {
     return axios({
-      url: `http://localhost:4000/login`,
+      url: `${BASE_URL}/login`,
       method: 'POST',
       data
     })
   },
   verifyToken() {
     return axios({
-      url: 'http://localhost:4000/verify-token',
+      url: `${BASE_URL}/verify-token`,
       method: 'POST',
       data: {
         token

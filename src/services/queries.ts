@@ -14,7 +14,6 @@ export const fetchBudgets = async (): Promise<FetchUserBudgetResponse> => {
     console.log(res.data)
     return res.data
   } catch (err:any) {
-    // handleInvalidToken(err.response.data.message)
     throw new Error(err)
   }
 }
@@ -40,7 +39,7 @@ export const fetchBudgetActivities = async (id: string) => {
 export const fetchBudget = async (id: string): Promise<BudgetCardProps> => {
   try {
     const res = await api.getBudget(id)
-    console.log(res.data)
+  
     return res.data
   } catch (err:any) {
     throw new Error(err)
@@ -50,7 +49,7 @@ export const fetchBudget = async (id: string): Promise<BudgetCardProps> => {
 export const updateBudget = async (data: updateBudgetRequest) => {
   try {
     const res = await api.updateBudget(data)
-    console.log(res.data)
+  
     return res.data
   } catch (err:any) {
     throw new Error(err)
@@ -74,7 +73,7 @@ export const login = async (data: RegisterRequest) => {
     localStorage.setItem("token",res.data.token)
     return res.data
   } catch (err:any) {
-    console.log(err)
+
     throw new Error(err.response.data.msg)
   }
 }
