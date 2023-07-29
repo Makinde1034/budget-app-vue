@@ -16,35 +16,38 @@
         class="input"
         type="password"
       />
-      <Button :loading="isLoading" width="100%" text="Register" />
+      <Button :loading="isLoading" width="100%" text="Register" />   
       <router-link to="/login"
-        ><p class="text-center text-white text-xs mt-5">Already have an account ? Login</p></router-link
+        ><p class="text-center text-white text-xs mt-5">
+          Already have an account ? Login
+        </p></router-link
       >
       <p class="text-[#ff3333] mt-5 text-sm text-center" v-if="error">{{ error }}</p>
     </form>
   </div>
 </template>
 <script lang="ts">
-import { RouterLink, RouterView, useRouter } from 'vue-router'            
-import { defineComponent } from 'vue'                                 
-import { useMutation } from 'vue-query'                                  
+import { RouterLink, RouterView, useRouter } from 'vue-router'
+import { defineComponent } from 'vue'
+import { useMutation } from 'vue-query'
 import Button from '@/components/Button/Button.vue'
-import { register } from '@/services/queries'                          
+import { register } from '@/services/queries'
+import api from '../services/index'
 
 export default defineComponent({
   components: { Button },
   name: 'Todos',
-  data() {                                                              
+  data() {
     return {
       registerRequest: {
         email: '',
-        password: ''                                                   
-      }                                                               
+        password: ''
+      }
     }
   },
   setup() {
     const router = useRouter()
-    const { mutate, data, isLoading, error } = useMutation(register,  {
+    const { mutate, data, isLoading, error } = useMutation(register, {
       onSuccess: () => {
         router.push('/budget')
       }
@@ -60,7 +63,9 @@ export default defineComponent({
   methods: {
     register() {
       this.mutate(this.registerRequest)
-    }
-  }
+    },
+ 
+  },
+
 })
 </script>

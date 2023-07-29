@@ -6,6 +6,7 @@ import type {
   RegisterRequest,
   updateBudgetRequest
 } from './types'
+import { handleInvalidToken } from '@/helpers/navigation'
 
 export const fetchBudgets = async (): Promise<FetchUserBudgetResponse> => {
   try {
@@ -13,11 +14,12 @@ export const fetchBudgets = async (): Promise<FetchUserBudgetResponse> => {
     console.log(res.data)
     return res.data
   } catch (err:any) {
+    // handleInvalidToken(err.response.data.message)
     throw new Error(err)
   }
 }
 
-export const createBudget = async (data: CreateBudegtRequest) => {
+export const createBudget = async (data: CreateBudegtRequest) => { 
   try {
     const res = await api.createUserBudgets(data)
     return res
@@ -55,14 +57,14 @@ export const updateBudget = async (data: updateBudgetRequest) => {
   }
 }
 
-export const register = async (data: RegisterRequest) => {
+export const register = async (data: RegisterRequest) => { 
   try {
     const res = await api.register(data)
     localStorage.setItem("token",res.data.token)
     return res.data
   } catch (err:any) {
 
-    throw new Error(err.response.data.msg)
+    throw new Error(err.response.data.msg) 
   }
 }
 

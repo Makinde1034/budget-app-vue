@@ -23,10 +23,10 @@ export default defineComponent({
         Stay on top of your spending habits with our user-friendly interface. Categorize expenses,
         set budgets, and monitor your financial progress
       </p>
-      <router-link to="/register"
-        ><button class="bg-primaryGreen text-white px-12 hover:opacity-70 py-3 rounded-3xl mt-5">
-          Get started
-        </button></router-link
+      <router-link
+        class="bg-primaryGreen text-white px-12 hover:opacity-70 py-3 rounded-3xl mt-5"
+        to="/register"
+        >Get started</router-link
       >
       <img class="w-[900px] mt-10" src="../assets/hero.svg" alt="hero-image" />
     </section>

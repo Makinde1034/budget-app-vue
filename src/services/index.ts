@@ -8,7 +8,7 @@ export default {
     return axios({
       url: 'http://localhost:4000/get-budgets',
       headers: {
-        'Authorization': `Bearer ${token}`
+        Authorization: `Bearer ${token}`
       }
     })
   },
@@ -65,12 +65,12 @@ export default {
       data
     })
   },
-  verifyToken(){
+  verifyToken() {
     return axios({
-      url:'http://localhost:4000/verify-token',
-      method:'POST',
-      data : {
-        token 
+      url: 'http://localhost:4000/verify-token',
+      method: 'POST',
+      data: {
+        token
       }
     })
   }

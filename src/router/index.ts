@@ -6,10 +6,11 @@ import api from '../services/index'
 
 const handleAuthorizedRouteNavigation = async (
   to: RouteLocationNormalized,
-  from: RouteLocationNormalized
+  from: RouteLocationNormalized,
 ) => {
+ 
+  const token = localStorage.getItem('token')
   const isAuthenticated = await api.verifyToken()
-
   if (!isAuthenticated.data.isTokenValid) {
     return { name: 'register' }
   }
@@ -45,34 +46,30 @@ const router = createRouter({
       path: '/budget',
       name: 'budget',
       component: () => import('../views/BudgetView.vue'),
-      beforeEnter: handleAuthorizedRouteNavigation
     },
     {
       path: '/create',
       name: 'create',
       component: () => import('../views/CreateView.vue'),
-      beforeEnter: handleAuthorizedRouteNavigation
+      
     },
     {
       path: '/activities/:id',
       name: 'activities',
       component: () => import('../views/ActivitiesView.vue'),
-      beforeEnter: handleAuthorizedRouteNavigation
+  
     },
     {
       path: '/register',
       name: 'register',
-      component: () => import('../views/Register.vue'),
-      beforeEnter: handleUnAuthorizedRouteNavigation
+      component: () => import('../views/Register.vue')
     },
     {
       path: '/login',
       name: 'login',
-      component: () => import('../views/Login.vue'),
-      beforeEnter: handleUnAuthorizedRouteNavigation
+      component: () => import('../views/Login.vue')
     }
   ]
 })
 
 export default router
-

@@ -22,7 +22,7 @@
   </div>
 </template>
 <script lang="ts">
-import { RouterLink, RouterView, useRouter } from 'vue-router'
+import { RouterLink, RouterView, useRouter } from 'vue-router'                                
 import { defineComponent } from 'vue'
 import { useMutation } from 'vue-query'
 import Button from '@/components/Button/Button.vue'
