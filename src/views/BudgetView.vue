@@ -20,7 +20,7 @@
     </section>
     <section v-else class="xl:w-[35%] py-10 lg:w-[60%] w-full">
       <h3 class="header">Your Budgets</h3>
-      <div class="grid w-[100%] mt-5 gap-5 md:grid-cols-2">
+      <div class="grid w-[100%] mt-5 gap-5 grid-cols-2 md:grid-cols-2">
         <div class="" v-for="(item, key) in transformedBudgetData" :key="key">
           <div class="">
             <BudgetCard
