@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-end cursor-pointer p-5">
+  <div class="flex justify-end  p-5">
     <img
       @click="
         () => {
