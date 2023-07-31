@@ -1,5 +1,5 @@
 <template>
-  <!-- <Nav /> -->
+  <Nav />
   <div class="h-[100vh] flex flex-col items-center p-20 px-5">
     <section v-if="isLoading" class="lg:w-[35%] w-full">
       <div class="grid w-[100%] mt-5 gap-5 lg:grid-cols-2">
@@ -63,7 +63,7 @@ export default defineComponent({
       fetchBudgets,
       {
         onError: () => {
-          console.log("error")
+          console.log('error')
         }
       }
     )

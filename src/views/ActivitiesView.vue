@@ -1,4 +1,5 @@
 <template>
+   <Nav />
   <div class="page z-30">
     <div v-if="!error" class="lg:w-[30%] z-30 w-full">
       <div class="w-full z-30 flex-center-y">
@@ -67,10 +68,11 @@ import { formatNumber, numberWithCommas } from '../helpers/number'
 import UpdateBudgetModal from '../components/Modals/UpdateBudgetModal.vue'
 import { useMutation } from 'vue-query'
 import { getDaysLeft } from '@/helpers/date'
+import Nav from '../components/Nav/Nav.vue'
 
 export default defineComponent({
   name: 'Budgets',
-  components: { Button, UpdateBudgetModal },
+  components: { Button, UpdateBudgetModal,Nav },
 
   setup() {
     const route = useRoute()
@@ -135,12 +137,18 @@ export default defineComponent({
     },
 
     computedDaysLeft() {
-      return getDaysLeft(this?.budgetData?.startDate || '', this?.budgetData?.endDate || '')
+      const daysLeft = getDaysLeft(
+        this?.budgetData?.startDate || '',
+        this?.budgetData?.endDate || ''
+      )
+      if (daysLeft < 0) {
+        return 0
+      }
+      return daysLeft
     },
     getAmountLeftPercentage() {
       const percentage =
-        100 - (Number(this?.budgetData?.amountSpent!) || 0 / this?.budgetData?.amount! || 0) * 100
-
+        100 - (Number(this?.budgetData.amountSpent!) / this?.budgetData.amount!) * 100
       return percentage
     }
   },

@@ -1,4 +1,5 @@
 <template>
+  <Nav />
   <div class="h-[100vh] flex flex-col px-5 pt-20 items-center">
     <form @submit.prevent="createBudgetHandler" class="lg:w-[30%]" action="">
       <h3 class="header mb-5">Create Budget</h3>
@@ -54,10 +55,11 @@ import Button from '@/components/Button/Button.vue'
 import { useMutation } from 'vue-query'
 import { createBudget } from '@/services/queries'
 import { useRouter } from 'vue-router'
+import Nav from '../components/Nav/Nav.vue'
 
 export default defineComponent({
   name: 'Create',
-  components: { Button },
+  components: { Button,Nav },
   data() {
     return {
       createBudgetRequestData: {
@@ -66,7 +68,7 @@ export default defineComponent({
         endDate: '',
         name: ''
       },
-      budgetColors: ['#F34F09', '#5433FF', '#FFE000', '#c31432'],   
+      budgetColors: ['#F34F09', '#5433FF', '#FFE000', '#c31432'],
       selectedColorIndex: 0
     }
   },
@@ -77,7 +79,7 @@ export default defineComponent({
         route.push('/budget')
       }
     })
-    return { mutate,isLoading }
+    return { mutate, isLoading }
   },
   methods: {
     createBudgetHandler() {
