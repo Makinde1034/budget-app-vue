@@ -1,5 +1,5 @@
 <template>
-  <div class="page px-5">
+  <div class="page lg:pt-12 px-5">
     <form @submit.prevent="login" class="lg:w-[25%]">
       <h1 class="text-center text-white text-2xl mb-5">Welcome back</h1>
       <input
