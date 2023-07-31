@@ -1,6 +1,6 @@
 <template>
   <Nav />
-  <div class="h-[100vh] flex flex-col items-center p-20 px-5">
+  <div class="h-[100vh] flex flex-col items-center  px-5">
     <section v-if="isLoading" class="lg:w-[35%] w-full">
       <div class="grid w-[100%] mt-5 gap-5 lg:grid-cols-2">
         <div v-for="(item, index) in [...Array(4)]" :key="index"><SkeletonLoader /></div>

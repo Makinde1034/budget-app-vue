@@ -74,7 +74,7 @@ input::-webkit-inner-spin-button {
     @apply text-white text-xl font-bold;
   }
   .page {
-    @apply h-[100vh] flex flex-col px-5 pt-20 items-center;
+    @apply h-[100vh] flex flex-col px-5  items-center;
   }
   .flex-center-x {
     @apply flex justify-center;
