@@ -148,7 +148,7 @@ export default defineComponent({
     },
     getAmountLeftPercentage() {
       const percentage =
-        100 - (Number(this?.budgetData.amountSpent!) / this?.budgetData.amount!) * 100
+        100 - (Number(this?.budgetData?.amountSpent!) / this?.budgetData?.amount!) * 100
       return percentage
     }
   },
