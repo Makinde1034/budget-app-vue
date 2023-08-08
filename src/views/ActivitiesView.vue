@@ -1,5 +1,5 @@
 <template>
-   <Nav />
+   <NavBar />
   <div class="page z-30">
     <div v-if="!error" class="lg:w-[30%] z-30 w-full">
       <div class="w-full z-30 flex-center-y">
@@ -59,20 +59,20 @@
 
 <script lang="ts">
 import Button from '../components/Button/Button.vue'
-import BudgetCard from '../components/BudgetCard/BudgetCard.vue'
+//import BudgetCard from '../components/BudgetCard/BudgetCard.vue'
 import { defineComponent, ref } from 'vue'
 import { fetchBudgetActivities, fetchBudget, updateBudget } from '../services/queries'
 import { useQuery } from 'vue-query'
-import { useRouter, useRoute } from 'vue-router'
+import { useRoute } from 'vue-router'
 import { formatNumber, numberWithCommas } from '../helpers/number'
 import UpdateBudgetModal from '../components/Modals/UpdateBudgetModal.vue'
-import { useMutation } from 'vue-query'
+//import { useMutation } from 'vue-query'
 import { getDaysLeft } from '@/helpers/date'
-import Nav from '../components/Nav/Nav.vue'
+import NavBar from '../components/Nav/Nav.vue'
 
 export default defineComponent({
   name: 'Budgets',
-  components: { Button, UpdateBudgetModal,Nav },
+  components: { Button, UpdateBudgetModal, NavBar },
 
   setup() {
     const route = useRoute()

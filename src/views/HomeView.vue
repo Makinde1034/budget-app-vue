@@ -1,7 +1,7 @@
 <script lang="ts">
-import { RouterView } from 'vue-router'
+//import { RouterView } from 'vue-router'
 import { defineComponent } from 'vue'
-import { useQuery } from 'vue-query'
+//import { useQuery } from 'vue-query'
 
 export default defineComponent({
   name: 'Todos',

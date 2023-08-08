@@ -1,5 +1,5 @@
 <template>
-  <Nav />
+  <NavBar />
   <div class="h-[100vh] flex flex-col px-5  items-center">
     <form @submit.prevent="createBudgetHandler" class="lg:w-[30%]" action="">
       <h3 class="header mb-5">Create Budget</h3>
@@ -12,7 +12,7 @@
       <input
         v-model="createBudgetRequestData.amount"
         class="input mb-6"
-        type="text"
+        type="number"
         placeholder="Budget Amount"
       />
       <input
@@ -20,6 +20,8 @@
         class="input mb-6"
         type="text"
         onfocus="(this.type='date')"
+        @input="handleMinDate"
+        v-bind:min="minDate"
         placeholder="Start date"
       />
       <input
@@ -49,25 +51,26 @@
 </template>
 
 <script lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+//import { RouterLink, RouterView } from 'vue-router'
 import { defineComponent } from 'vue'
 import Button from '@/components/Button/Button.vue'
 import { useMutation } from 'vue-query'
 import { createBudget } from '@/services/queries'
 import { useRouter } from 'vue-router'
-import Nav from '../components/Nav/Nav.vue'
+import NavBar from '../components/Nav/Nav.vue'
 
 export default defineComponent({
   name: 'Create',
-  components: { Button,Nav },
+  components: { Button, NavBar },
   data() {
     return {
       createBudgetRequestData: {
         amount: '',
         startDate: '',
         endDate: '',
-        name: ''
+        name: '',
       },
+        minDate: '2023-08-01',
       budgetColors: ['#F34F09', '#5433FF', '#FFE000', '#c31432'],
       selectedColorIndex: 0
     }
@@ -91,7 +94,16 @@ export default defineComponent({
     },
     handleColorSelection(index: number) {
       this.selectedColorIndex = index
-    }
+    },
+    handleMinDate(event) {
+      const inputDate = event.target.value;
+      if (inputDate < this.minDate) {
+        console.log('pppp')
+        // Valid date within the range
+      } else {
+        // Date out of range, handle accordingly (e.g., show error message)
+      }
+    },
   },
   computed: {
     isButtonDisabled() {
