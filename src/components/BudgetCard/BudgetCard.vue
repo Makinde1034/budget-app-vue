@@ -5,10 +5,10 @@
     </div>
   </div>
   <div @click="handleActiviteisNavigation" v-else>
-    <div class="budgetCard">
-      <h3 class="text-white font-medium text-xl mb-1">{{ name }}</h3>
+    <div class="budgetCard text-white relative">
+      <h3 class="font-medium text-xl mb-1">{{ name }}</h3>
       <p class="text-[#DCDCDC] text-sm mb-12">{{ computedDaysLeft }} days left</p>
-      <p class="text-white font-medium">{{ amountRemaining }}</p>
+      <p class="font-medium">{{ amountRemaining }}</p>
       <p class="text-[#DCDCDC]">remaining</p>
       <div class="h-6 rounded-xl mt-5 w-[100%] gr">
         <div
@@ -16,6 +16,23 @@
           :class="` h-[100%] ${getBarRightBorderRadius()}  rounded-tl-3xl rounded-bl-3xl`"
         ></div>
       </div>
+      <div class="flex flex-col items-end absolute top-5 right-7">
+        <button @click.stop="
+            () => {
+              isoptionsOpen = !isoptionsOpen
+            }
+          "
+          class="w-6  flex justify-center rounded-2xl"
+        >
+          <svg class="w-2" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 128 512"><path d="M64 360a56 56 0 1 0 0 112 56 56 0 1 0 0-112zm0-160a56 56 0 1 0 0 112 56 56 0 1 0 0-112zM120 96A56 56 0 1 0 8 96a56 56 0 1 0 112 0z"/></svg>
+        </button>     
+        
+        <div v-show="isoptionsOpen" @click.stop="handleButtonClick" class="border border-white rounded-lg">
+          <p class="hover:bg-white hover:text-black py-2 px-3 border-b">Pin</p>
+          <p class="hover:bg-white hover:text-black py-2 px-3">Delete</p>
+        </div>
+      </div>
+
     </div>
   </div>
 </template>
@@ -38,6 +55,11 @@ export default defineComponent({
     lastIndex: Number,
     ID: String,
     color: String
+  },
+  data() {
+    return {
+      isoptionsOpen: false
+    }
   },
 
   computed: {
@@ -69,7 +91,11 @@ export default defineComponent({
     },
     handleActiviteisNavigation() {
       this.$router.push(`/activities/${this.ID}`)
-    }
+    },
+    handleButtonClick(event) {
+      event.stopPropagation() // Stops propagation to the prevent routing
+      
+    },
   }
 })
 </script>
