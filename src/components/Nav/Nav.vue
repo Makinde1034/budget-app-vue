@@ -1,5 +1,7 @@
 <template>
-  <div class="flex justify-end  p-5" >
+  <nav class="flex justify-between  p-5" >
+    <p class="text-white text-2xl"><span class="text-primaryGreen">B</span>udgetBuddy</p>
+
     <button ref="toggleNav">
       <img
         @click="
@@ -14,19 +16,20 @@
     </button>
 
     <div
-        v-show="isMenuOpen" 
-        ref="navContainer" 
-        class="absolute top-[50px]"
-      >
+      v-show="isMenuOpen" 
+      ref="navContainer" 
+      class="absolute top-[50px] "
+    >
       <button
         @click="logoutHandler()"
         class=" border text-left border-[#484f58] w-[100px] rounded-lg gr p-3"
       >
         <span class="text-white text-xs">Logout</span>
       </button>
-    </div>
 
-  </div>
+      <a class="flex ">Budgets</a>
+    </div>
+  </nav>
 </template>
 
 <script lang="ts">
