@@ -1,5 +1,5 @@
 <template>
-   <NavBar />
+  <NavBar />
   <div class="page z-30">
     <div v-if="!error" class="lg:w-[30%] z-30 w-full">
       <div class="w-full z-30 flex-center-y">
@@ -35,7 +35,7 @@
               <p class="text-white text-sm">{{ nairaDisplay(item.amount) }}</p>
             </div>
           </div>
-          <div class="gr flex-center-x items-center cursor-pointer p-3 rounded-3xl">
+          <div class="gr relative flex-center-x items-center cursor-pointer p-3 rounded-3xl">
             <p class="text-white text-xs mr-3">Category</p>
             <img class="h-2" src="../assets/arrowDown.svg" alt="" />
           </div>
@@ -73,7 +73,6 @@ import NavBar from '../components/Nav/Nav.vue'
 export default defineComponent({
   name: 'Budgets',
   components: { Button, UpdateBudgetModal, NavBar },
-
   setup() {
     const route = useRoute()
     const budgetID = route.params.id
