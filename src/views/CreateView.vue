@@ -85,10 +85,10 @@ export default defineComponent({
     return { mutate, isLoading }
   },
   methods: {
-    createBudgetHandler() {
+    createBudgetHandler() {                                           
       this.mutate({
         ...this.createBudgetRequestData,
-        amount: Number(this.createBudgetRequestData.amount),
+        amount: Number(this.createBudgetRequestData.amount),         
         color: this.budgetColors[this.selectedColorIndex]
       })
     },
