@@ -57,11 +57,10 @@ import Button from '@/components/Button/Button.vue'
 import { useMutation } from 'vue-query'
 import { createBudget } from '@/services/queries'
 import { useRouter } from 'vue-router'
-import NavBar from '../components/Nav/Nav.vue'
 
 export default defineComponent({
   name: 'Create',
-  components: { Button, NavBar },
+  components: { Button },
   data() {
     return {
       createBudgetRequestData: {

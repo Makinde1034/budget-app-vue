@@ -1,5 +1,5 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <NavBar />
   <div class="h-[100vh] flex flex-col items-center  px-5">
     <section v-if="isLoading" class="lg:w-[35%] w-full">
       <div class="grid w-[100%] mt-5 gap-5 lg:grid-cols-2">
@@ -18,7 +18,7 @@
       <p>An error occured</p>
       v
     </section>
-    <section v-else class=" py-10 lg:w-[60%] w-full">
+    <section v-else class=" py-10 lg:pl-60 w-full">
       <h3 class="header">Your Budgets</h3>
       <div class="grid w-[100%] mt-5 gap-5 grid-cols-2 md:grid-cols-2">
         <div class="" v-for="(item, key) in transformedBudgetData" :key="key">
@@ -50,12 +50,11 @@ import { fetchBudgets } from '../services/queries'
 import { useQuery } from 'vue-query'
 import SkeletonLoader from '../components/Loaders/SkeletonLoader.vue'
 //import { RouterLink } from 'vue-router'
-import NavBar from '../components/Nav/Nav.vue'
 //import { handleAuthorizedRouteNavigation } from '../helpers/navigation'
 
 export default defineComponent({
   name: 'Budgets',
-  components: { Button, BudgetCard, SkeletonLoader, NavBar },
+  components: { Button, BudgetCard, SkeletonLoader },
 
   setup() {
     const { isLoading, isError, data, error, isFetching, refetch } = useQuery(

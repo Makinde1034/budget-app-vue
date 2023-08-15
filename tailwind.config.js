@@ -11,6 +11,19 @@ module.exports = {
         primaryBlack : '#181818'
       }
     },
+    screens: {
+      'sm': '640px',
+
+      'md': {'min' : '800px'},
+      '-md': {'max': '800px'},
+
+      'lg': {'min' : '1024px'},
+      '-lg': {'max': '1024px'},
+
+      'xl': '1280px',
+
+      '2xl': '1536px',
+    }
   },
   plugins: [],
 }

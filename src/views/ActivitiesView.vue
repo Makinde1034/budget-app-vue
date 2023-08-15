@@ -1,6 +1,5 @@
 <template>
-  <NavBar />
-  <div class="page z-30">
+  <div class="page z-30 lg:pl-60">
     <div v-if="!error" class="lg:w-[30%] z-30 w-full">
       <div class="w-full z-30 flex-center-y">
         <h3 class="header">{{ budgetData?.name }}</h3>

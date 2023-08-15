@@ -1,6 +1,6 @@
 <template>
-  <nav class="flex justify-between  p-5" >
-    <p class="text-white text-2xl"><span class="text-primaryGreen">B</span>udgetBuddy</p>
+  <nav class="flex justify-between p-5 text-white" >
+    <p class="text-white text-2xl pl-5"><span class="text-primaryGreen">B</span>udgetBuddy</p>
 
     <button ref="toggleNav">
       <img
@@ -9,33 +9,38 @@
             isMenuOpen = !isMenuOpen
           }
         "
-        class="h-5 text-white"
+        class="h-5"
         src="../../assets/logout.svg"
         alt="hero-image"
       />
     </button>
 
+    <!--
     <div
       v-show="isMenuOpen" 
       ref="navContainer" 
-      class="absolute top-[50px] "
+      class="absolute right-5 top-[55px] border-2 border-primaryGreen rounded h-max bg-neutral-100 overflow-hidden"
     >
-      <button
-        @click="logoutHandler()"
-        class=" border text-left border-[#484f58] w-[100px] rounded-lg gr p-3"
-      >
-        <span class="text-white text-xs">Logout</span>
-      </button>
-
-      <a class="flex ">Budgets</a>
+      <router-link to="/budget" class="px-5 p-2 block hover:bg-neutral-300 cursor-pointer border-b border-primaryGreen">Budgets</router-link>
+      <a @click="logoutHandler()" class="px-5 p-2 block hover:bg-neutral-300 cursor-pointer">Logout</a>
     </div>
+    -->
+
   </nav>
+  <div
+    v-show="isMenuOpen" 
+  >
+    <Sidebar />
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
+import Sidebar from './Sidebar.vue';
+
 export default defineComponent({
   name: 'NavBar',
+  components: { Sidebar },
   data() {
     return {
       isMenuOpen: false
