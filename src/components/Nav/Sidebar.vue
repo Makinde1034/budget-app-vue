@@ -9,7 +9,7 @@
                     @click="$emit('handleMenuClose')"
                     class="flex w-max mb-5 hover:text-primaryGreen"
                 >
-                    <img class="w-5 h-5 mr-3 text-white" src="../../assets/Nav-Icons/home.svg" alt="">
+                    <img class="w-5 h-5 mr-3 text-white" src="../../assets/Nav-Icons/home-icon.svg" alt="">
                     <span>Home</span>
                 </router-link>
                 <router-link 
@@ -17,19 +17,19 @@
                     @click="$emit('handleMenuClose')"
                     class="flex w-max mb-5 hover:text-primaryGreen"
                 >
-                    <img class="w-5 h-5 mr-3 text-white" src="../../assets/Nav-Icons/budget.svg" alt="">
+                    <img class="w-5 h-5 mr-3 text-white" src="../../assets/Nav-Icons/budget-icon.svg" alt="">
                     <span>Budgets</span>
                 </router-link>
                 <a href="#" class="flex w-max mb-5 hover:text-primaryGreen">
-                    <img class="w-5 h-5 mr-3 text-white" src="../../assets/Nav-Icons/goals.svg" alt="">
+                    <img class="w-5 h-5 mr-3 text-white" src="../../assets/Nav-Icons/goals-icon.svg" alt="">
                     <span>Goals</span>
                 </a>
                 <a href="#" class="flex w-max mb-5 hover:text-primaryGreen">
-                    <img class="w-5 h-5 mr-3 text-white" src="../../assets/Nav-Icons/notifications.svg" alt="">
+                    <img class="w-5 h-5 mr-3 text-white" src="../../assets/Nav-Icons/notifications-icon.svg" alt="">
                     <span>Notifications</span>
                 </a>
                 <a href="#" class="flex w-max mb-5 hover:text-primaryGreen">
-                    <img class="w-5 h-5 mr-3 text-white" src="../../assets/Nav-Icons/settings.svg" alt="">
+                    <img class="w-5 h-5 mr-3 text-white" src="../../assets/Nav-Icons/settings-icon.svg" alt="">
                     <span>Settings</span>
                 </a>
             </div>
@@ -38,7 +38,7 @@
                 @click="logoutHandler()" 
                 class=" w-max flex px-9 hover:text-primaryGreen"
             >
-                <img class="w-5 h-5 mr-3" src="../../assets/Nav-Icons/logout.svg" alt="">
+                <img class="w-5 h-5 mr-3" src="../../assets/Nav-Icons/logout-icon.svg" alt="">
                 <span>Log out</span>
             </button>
         </nav>        

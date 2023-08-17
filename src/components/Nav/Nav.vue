@@ -14,7 +14,10 @@
         </div>
       </button>   
 
-      <p class="text-white text-2xl pl-2"><span class="text-primaryGreen">B</span>udgetBuddy</p>
+      
+      <router-link to="/">
+        <span class="text-white text-2xl pl-2"><span class="text-primaryGreen">B</span>udgetBuddy</span>
+      </router-link>
     </div>
 
     <div class="flex items-center py-3 px-5">
@@ -51,21 +54,21 @@ export default defineComponent({
     handleMenuClose() {
       this.isMenuOpen = false
     },
-    closeMenuOnClickOutside(event: Event) {
-        const navContainer = this.$refs.sidebarContainer
-        const toggleButton = this.$refs.toggleButton
+    /*closeMenuOnClickOutside(event: Event) {
+      const navContainer = this.$refs.sidebarContainer
+      const toggleButton = this.$refs.toggleButton
 
-        if ( !navContainer.contains(event.target) && !toggleButton.contains(event.target) ) {
-          this.isMenuOpen = false
-        }
-    },
+      if ( !navContainer.contains(event.target) && !toggleButton.contains(event.target) ) {
+        this.isMenuOpen = false
+      }
+    },*/
   },
-  mounted() {
+  /*mounted() {
     document.addEventListener('click', this.closeMenuOnClickOutside)
   },
   beforeUnmount() {
     document.removeEventListener('click', this.closeMenuOnClickOutside)
-  },
+  },*/
 })
 </script>
 
