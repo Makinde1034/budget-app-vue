@@ -92,9 +92,8 @@ export default defineComponent({
     handleActiviteisNavigation() {
       this.$router.push(`/activities/${this.ID}`)
     },
-    handleButtonClick(event) {
+    handleButtonClick(event: Event) {
       event.stopPropagation() // Stops propagation to the prevent routing
-      
     },
   }
 })

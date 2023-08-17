@@ -11,7 +11,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="px-5 pt-10 lg:pl-60">
+  <div class="px-4 lg:pl-64 pt-10">
     <h1 class="text-white text-center text-7xl -md:text-6xl mt-10"><span class="text-primaryGreen">B</span>udgetBuddy</h1>
     <section class="flex pt-28 justify-center items-center flex-col">
       <h3 class="text-3xl text-white text-center font-bold">

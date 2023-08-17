@@ -1,6 +1,6 @@
 <template>
   <NavBar />
-  <div class="h-[100vh] flex flex-col px-5  items-center">
+  <div class="h-[100vh] flex flex-col px-4 lg:pl-64 items-center">
     <form @submit.prevent="createBudgetHandler" class="lg:w-[30%]" action="">
       <h3 class="header mb-5">Create Budget</h3>
       <input
@@ -51,7 +51,6 @@
 </template>
 
 <script lang="ts">
-//import { RouterLink, RouterView } from 'vue-router'
 import { defineComponent } from 'vue'
 import Button from '@/components/Button/Button.vue'
 import { useMutation } from 'vue-query'
@@ -94,8 +93,9 @@ export default defineComponent({
     handleColorSelection(index: number) {
       this.selectedColorIndex = index
     },
-    handleMinDate(event) {
-      const inputDate = event.target.value;
+    handleMinDate(event: Event) {
+      const { target } = event
+      const inputDate = ((target as HTMLInputElement).value)
       if (inputDate < this.minDate) {
         console.log('pppp')
         // Valid date within the range

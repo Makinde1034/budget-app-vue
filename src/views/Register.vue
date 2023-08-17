@@ -1,6 +1,6 @@
 <template>
-  <div class="page lg:pt-12 px-5">
-    <form @submit.prevent="register" class="lg:w-[25%]">
+  <div class="page pt-32 px-4 lg:pl-64">
+    <form @submit.prevent="register" class="w-[35%] min-w-[350px]">
       <h1 class="text-center text-white text-2xl mb-5">Let's get started</h1>
       <input
         v-model="registerRequest.email"
@@ -27,7 +27,7 @@
   </div>
 </template>
 <script lang="ts">
-import { RouterLink, RouterView, useRouter } from 'vue-router'
+import { useRouter } from 'vue-router'
 import { defineComponent } from 'vue'
 import { useMutation } from 'vue-query'
 import Button from '@/components/Button/Button.vue'
