@@ -1,6 +1,6 @@
 <template>
   <NavBar />
-  <div class="h-[100vh] flex flex-col px-4 lg:pl-64 items-center">
+  <div class="h-[100vh] flex flex-col pt-40 px-4 pl-20 items-center">
     <form @submit.prevent="createBudgetHandler" class="lg:w-[30%]" action="">
       <h3 class="header mb-5">Create Budget</h3>
       <input

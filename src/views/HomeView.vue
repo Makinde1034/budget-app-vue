@@ -1,33 +1,74 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <script lang="ts">
-//import { RouterView } from 'vue-router'
 import { defineComponent } from 'vue'
-//import { useQuery } from 'vue-query'
 
 export default defineComponent({
   name: 'Home',
-  setup() {}
+  computed: {
+  },
 })
 </script>
 
 <template>
-  <div class="px-4 lg:pl-64 pt-10">
-    <h1 class="text-white text-center text-7xl -md:text-6xl mt-10"><span class="text-primaryGreen">B</span>udgetBuddy</h1>
-    <section class="flex pt-28 justify-center items-center flex-col">
-      <h3 class="text-3xl text-white text-center font-bold">
+  <div class="px-4 pb-28 pl-20 text-lg text-white">
+    <section class=" h-screen flex flex-col justify-center items-center">
+      <h1 class="text-center font-semibold text-8xl -md:text-6xl mb-10"><span class="text-primaryGreen">B</span>udgetBuddy</h1>
+      <h3 class="text-3xl text-center font-bold">
         Your Ultimate <br />
         <span class="text-primaryGreen">Budgeting </span>Companion
       </h3>
-      <p class="text-white lg:w-[35%] leading-6 text-center text-sm mt-5">
-        Stay on top of your spending habits with our user-friendly interface. Categorize expenses,
-        set budgets, and monitor your financial progress
+      <p class="leading-6 text-center my-5">
+        Stay on top of your spending habits with our user-friendly interface. <br> 
+        Categorize expenses, set budgets, and monitor your financial progress.
       </p>
       <router-link
         class="bg-primaryGreen text-white px-12 hover:opacity-70 py-3 rounded-3xl mt-5"
         to="/register"
-        >Get started</router-link
       >
-      <img class="w-[900px] mt-10" src="../assets/hero.svg" alt="hero-image" />
+        Get started
+      </router-link>      
+    </section>
+
+    <section class="px-5 max-w-[900px] mx-auto">
+      <h2 class="mb-10 text-6xl text-center">About <span class="text-primaryGreen">B</span>udgetBuddy</h2>
+      <p>BudgetBuddy is a user-centric application designed for seamless personal finance management. Its intuitive interface empowers you to effortlessly monitor expenses, establish budgets, define financial objectives, and generate insightful reports. The focus is on maintaining financial control and enabling well-informed monetary choices.</p>
+
+      <div class="mt-32 tracking-wide">
+        <div class="grid grid-cols-2 gap-x-10 mb-40 place-items-center">
+          <div class="">
+            <p class="text-5xl font-semibold leading-tight mb-10">Budgeting will make <br> your life better</p>
+            <p>Elevate your budgeting experience with remarkable financial design for your personal finances. Infuse vitality into your financial strategies and ideas.
+            </p>            
+          </div>
+
+          <div>
+            <img class="w-80" src="../assets//budget-one.svg" alt="">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-x-10 mb-40 place-items-center">
+          <div>
+            <img class="w-80" src="../assets//budget-two.svg" alt="">
+          </div>
+
+          <div class="">
+            <p class="text-5xl font-semibold leading-tight mb-10">Upcoming Budget Deadline Alerts</p>
+            <p>Stay on top of your financial goals effortlessly! Get notified when the end time of a budget is drawing near, ensuring you never miss a deadline.
+            </p>            
+          </div>
+        </div>
+        
+        <div class="grid grid-cols-2 gap-x-10 mb-40 place-items-center">
+          <div class="">
+            <p class="text-5xl font-semibold leading-tight mb-10">Goal Setting and Tracking</p>
+            <p>Empower your aspirations with BufgetBuddy! Define your financial objectives and seamlessly track your progress, and stay motivated on your journey to financial success.</p>            
+          </div>
+
+          <div>
+            <img class="w-80" src="../assets//budget-three.svg" alt="">
+          </div>
+        </div>
+      </div>
     </section>
   </div>
 </template>

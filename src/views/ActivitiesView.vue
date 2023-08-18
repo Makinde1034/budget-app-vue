@@ -1,5 +1,5 @@
 <template>
-  <div class="page z-30 pt-32 px-4 lg:pl-64">
+  <div class="page z-30 pt-40 px-4 pl:20">
     <div v-if="!error" class="lg:w-[30%] z-30 w-full">
       <div class="w-full z-30 flex-center-y">
         <h3 class="header">{{ budgetData?.name }}</h3>

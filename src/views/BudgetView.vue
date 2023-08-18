@@ -1,5 +1,5 @@
 <template>
-  <div class="h-[100vh] flex flex-col items-center lg:pl-64 px-4 pt-24">
+  <div class="h-[100vh] flex flex-col items-center pl-20 px-4 pt-24">
     <section v-if="isLoading" class="w-full">
       <div class="grid w-[100%] mt-5 gap-5 grid-cols-2">
         <div class="max-w-[400px]" v-for="(item, index) in [...Array(4)]" :key="index"><SkeletonLoader /></div>

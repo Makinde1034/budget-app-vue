@@ -1,5 +1,5 @@
 <template>
-  <div class="page pt-32 px-4 lg:pl-64">
+  <div class="page pt-32 px-4 pl-20">
     <form @submit.prevent="register" class="w-[35%] min-w-[350px]">
       <h1 class="text-center text-white text-2xl mb-5">Let's get started</h1>
       <input
