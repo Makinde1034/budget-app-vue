@@ -34,8 +34,8 @@ export default defineComponent({
       <p>BudgetBuddy is a user-centric application designed for seamless personal finance management. Its intuitive interface empowers you to effortlessly monitor expenses, establish budgets, define financial objectives, and generate insightful reports. The focus is on maintaining financial control and enabling well-informed monetary choices.</p>
 
       <div class="mt-32 tracking-wide">
-        <div class="grid grid-cols-2 gap-x-10 mb-40 place-items-center">
-          <div class="">
+        <div class="grid grid-cols-2 -md:grid-cols-1 gap-x-10 mb-40 place-items-center">
+          <div class=" -md:mb-10">
             <p class="text-5xl font-semibold leading-tight mb-10">Budgeting will make <br> your life better</p>
             <p>Elevate your budgeting experience with remarkable financial design for your personal finances. Infuse vitality into your financial strategies and ideas.
             </p>            
@@ -46,10 +46,8 @@ export default defineComponent({
           </div>
         </div>
 
-        <div class="grid grid-cols-2 gap-x-10 mb-40 place-items-center">
-          <div>
-            <img class="w-80" src="../assets//budget-two.svg" alt="">
-          </div>
+        <div class="grid grid-cols-2 -md:grid-cols-1 gap-x-10 mb-40 place-items-center">
+            <img class="w-80 -md:mb-10" src="../assets//budget-two.svg" alt="">
 
           <div class="">
             <p class="text-5xl font-semibold leading-tight mb-10">Upcoming Budget Deadline Alerts</p>
@@ -58,8 +56,8 @@ export default defineComponent({
           </div>
         </div>
         
-        <div class="grid grid-cols-2 gap-x-10 mb-40 place-items-center">
-          <div class="">
+        <div class="grid grid-cols-2 -md:grid-cols-1 gap-x-10 mb-20 place-items-center">
+          <div class=" -md:mb-10">
             <p class="text-5xl font-semibold leading-tight mb-10">Goal Setting and Tracking</p>
             <p>Empower your aspirations with BufgetBuddy! Define your financial objectives and seamlessly track your progress, and stay motivated on your journey to financial success.</p>            
           </div>
@@ -69,6 +67,13 @@ export default defineComponent({
           </div>
         </div>
       </div>
+      
+      <router-link
+        class="bg-primaryGreen text-white px-20 hover:opacity-70 py-3 w-max rounded-3xl mx-auto block"
+        to="/register"
+      >
+        Get started
+      </router-link>  
     </section>
   </div>
 </template>

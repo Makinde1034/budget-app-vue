@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
 import { useQueryProvider } from "vue-query"
 import NavBar from './components/Nav/Nav.vue'
 import Sidebar from './components/Nav/Sidebar.vue'
+import FooterComp from './components/Footer.vue'
 
-useQueryProvider();
+useQueryProvider()
 </script>
 
 <template>
@@ -14,6 +15,8 @@ useQueryProvider();
   </div>
 
   <RouterView />
+
+  <FooterComp />
 </template>
 
 <style scoped>
