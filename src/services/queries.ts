@@ -11,7 +11,7 @@ import { handleInvalidToken } from '@/helpers/navigation'
 export const fetchBudgets = async (): Promise<FetchUserBudgetResponse> => {
   try {
     const res = await api.getUserBudgets()
-    console.log(res.data)
+    //console.log(res.data)
     return res.data
   } catch (err:any) {
     throw new Error(err)

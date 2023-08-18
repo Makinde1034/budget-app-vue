@@ -1,9 +1,8 @@
 <template>
-  <Nav />
-  <div class="h-[100vh] flex flex-col items-center  px-5">
-    <section v-if="isLoading" class="lg:w-[35%] w-full">
-      <div class="grid w-[100%] mt-5 gap-5 lg:grid-cols-2">
-        <div v-for="(item, index) in [...Array(4)]" :key="index"><SkeletonLoader /></div>
+  <div class="h-[100vh] flex flex-col items-center lg:pl-64 px-4 pt-24">
+    <section v-if="isLoading" class="w-full">
+      <div class="grid w-[100%] mt-5 gap-5 grid-cols-2">
+        <div class="max-w-[400px]" v-for="(item, index) in [...Array(4)]" :key="index"><SkeletonLoader /></div>
       </div>
     </section>
     <section
@@ -18,10 +17,10 @@
       <p>An error occured</p>
       v
     </section>
-    <section v-else class="xl:w-[35%] py-10 lg:w-[60%] w-full">
+    <section v-else class="lg:px-4 py-10 w-full">
       <h3 class="header">Your Budgets</h3>
-      <div class="grid w-[100%] mt-5 gap-5 grid-cols-2 md:grid-cols-2">
-        <div class="" v-for="(item, key) in transformedBudgetData" :key="key">
+      <div class="grid w-[100%] justify-center mt-5 gap-5 grid-cols-2 md:grid-cols-2">
+        <div class="max-w-[400px]" v-for="(item, key) in transformedBudgetData" :key="key">
           <div class="">
             <BudgetCard
               amountRemaining="ddkdkkd"
@@ -49,13 +48,12 @@ import { defineComponent } from 'vue'
 import { fetchBudgets } from '../services/queries'
 import { useQuery } from 'vue-query'
 import SkeletonLoader from '../components/Loaders/SkeletonLoader.vue'
-import { RouterLink } from 'vue-router'
-import Nav from '../components/Nav/Nav.vue'
-import { handleAuthorizedRouteNavigation } from '../helpers/navigation'
+//import { RouterLink } from 'vue-router'
+//import { handleAuthorizedRouteNavigation } from '../helpers/navigation'
 
 export default defineComponent({
   name: 'Budgets',
-  components: { Button, BudgetCard, SkeletonLoader, Nav },
+  components: { Button, BudgetCard, SkeletonLoader },
 
   setup() {
     const { isLoading, isError, data, error, isFetching, refetch } = useQuery(

@@ -9,7 +9,7 @@
         @click="closeModal?.()"
         class="bg-primaryBlack cursor-pointer flex-center-x items-center h-12 rounded-full mb-5 w-12"
       >
-        <img class="h-5" src="../../assets/cancelIcon.svg" alt="" />
+        <img class="h-5" src="../../assets/cancel-icon.svg" alt="" />
       </div>
       <div class="p-5 lg:w-[400px] w-[100%] bg-primaryBlack rounded-[30px] z-50">
         <input

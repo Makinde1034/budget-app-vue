@@ -1,19 +1,18 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <script lang="ts">
-import { RouterView } from 'vue-router'
+//import { RouterView } from 'vue-router'
 import { defineComponent } from 'vue'
-import { useQuery } from 'vue-query'
+//import { useQuery } from 'vue-query'
 
 export default defineComponent({
-  name: 'Todos',
+  name: 'Home',
   setup() {}
 })
 </script>
 
 <template>
-  <div class="px-5">
-    <nav class="flex justify-center py-5">
-      <h1 class="text-white text-2xl"><span class="text-primaryGreen">B</span>udgetBuddy</h1>
-    </nav>
+  <div class="px-4 lg:pl-64 pt-10">
+    <h1 class="text-white text-center text-7xl -md:text-6xl mt-10"><span class="text-primaryGreen">B</span>udgetBuddy</h1>
     <section class="flex pt-28 justify-center items-center flex-col">
       <h3 class="text-3xl text-white text-center font-bold">
         Your Ultimate <br />
