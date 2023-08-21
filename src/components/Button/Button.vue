@@ -4,7 +4,7 @@
     @click="clickHandler()"
     :class="`bg-primaryGreen w-[${width}] py-${py} py-[15px] ${
       disabled ? 'opacity-70' : 'opacity-100'
-    } cursor-pointer outline-none focus:outline-none text-white font-bold px-12 hover:opacity-70  rounded-3xl mt-5`"
+    } cursor-pointer outline-none focus:outline-none text-white px-12 hover:opacity-70 rounded-3xl mt-5`"
   >
     <svg
       v-if="loading"
@@ -23,7 +23,7 @@
         fill="currentFill"
       />
     </svg>
-    <p v-else class="text-sm">{{ text }}</p>
+    <p v-else class="text-lg tracking-wide">{{ text }}</p>
   </button>
 </template>
 

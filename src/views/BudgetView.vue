@@ -1,8 +1,9 @@
 <template>
-  <div class="h-[100vh] flex flex-col items-center pl-20 px-4 pt-24">
-    <section v-if="isLoading" class="w-full">
-      <div class="grid w-[100%] mt-5 gap-5 grid-cols-2">
-        <div class="max-w-[400px]" v-for="(item, index) in [...Array(4)]" :key="index"><SkeletonLoader /></div>
+  <div class="min-h-[100vh] flex flex-col items-center xs:pl-20 px-4 py-24">
+    <section v-if="isLoading" class="w-full lg:px-4 py-6">
+      <h3 class="text-5xl text-white font-bold mb-12">Your Budgets</h3>
+      <div class=" w-[100%] mt-5 gap-5 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+        <div class="max-w-[400px] w-full mx-auto" v-for="(item, index) in [...Array(6)]" :key="index"><SkeletonLoader /></div>
       </div>
     </section>
     <section
@@ -17,10 +18,10 @@
       <p>An error occured</p>
       v
     </section>
-    <section v-else class="lg:px-4 py-10 w-full">
-      <h3 class="header">Your Budgets</h3>
-      <div class="grid w-[100%] justify-center mt-5 gap-5 grid-cols-2 md:grid-cols-2">
-        <div class="max-w-[400px]" v-for="(item, key) in transformedBudgetData" :key="key">
+    <section v-else class="px-4 py-6 w-full ">
+      <h3 class=" mb-12 text-5xl text-white font-bold">Your Budgets</h3>
+      <div class="grid w-[100%] justify-center mt-5 gap-5 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+        <div class="max-w-[400px] w-full mx-auto" v-for="(item, key) in transformedBudgetData" :key="key">
           <div class="">
             <BudgetCard
               amountRemaining="ddkdkkd"

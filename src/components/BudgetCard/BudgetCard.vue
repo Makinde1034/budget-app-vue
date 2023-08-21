@@ -22,9 +22,9 @@
               isoptionsOpen = !isoptionsOpen
             }
           "
-          class="w-6  flex justify-center rounded-2xl"
+          class="w-9 h-9 focus:bg-white focus:bg-opacity-20 flex justify-center rounded-full"
         >
-          <svg class="w-2" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 128 512"><path d="M64 360a56 56 0 1 0 0 112 56 56 0 1 0 0-112zm0-160a56 56 0 1 0 0 112 56 56 0 1 0 0-112zM120 96A56 56 0 1 0 8 96a56 56 0 1 0 112 0z"/></svg>
+          <img class="w-8" src="../../assets/ellipsis.svg" alt="">
         </button>     
         
         <div v-show="isoptionsOpen" @click.stop="handleButtonClick" class="border border-white rounded-lg">

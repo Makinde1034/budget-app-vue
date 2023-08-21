@@ -1,51 +1,50 @@
-<template>
-    <div v-if="isMenuOpen" class="w-60 h-screen fixed z-40 left-0 top-0 bg-black border-r-white border-r-2 rounded-tr-3xl rounded-br-3xl">
-        <nav class="h-full pt-7 pb-[10vh] text-white text-2xl flex flex-col justify-between relative" >
+<template>    
+    <div v-if="!isMenuOpen === false" class="h-screen fixed z-40 left-0 top-0 text-white text-3xl bg-black border-white border-r-2">
+        <nav class="h-full leading-[28px] pt-7 pb-[10vh] flex flex-col items-center justify-between relative">
             <div><!-- Placeholder DIV --></div>
 
-            <div class="px-9 w-full">
+            <div class="px-5">
                 <router-link 
                     to="/" 
                     @click="$emit('handleMenuClose')"
-                    class="flex items-center w-max my-8 hover:text-primaryGreen"
+                    class="flex items-center my-10"
                 >
-                    <img class="w-5 h-5 mr-3 text-white" src="../../assets/Nav-Icons/home-icon.svg" alt="">
-                    <span>Home</span>
+                    <img class="w-7 h-7 mr-6" src="../../assets/Nav-Icons/home-icon.svg" alt="">
+                    <span class="">Home</span>
                 </router-link>
                 <router-link 
                     to="/budget" 
                     @click="$emit('handleMenuClose')"
-                    class="flex items-center w-max my-8 hover:text-primaryGreen"
+                    class="flex items-center my-10"
                 >
-                    <img class="w-5 h-5 mr-3 text-white" src="../../assets/Nav-Icons/budget-icon.svg" alt="">
+                    <img class="w-7 h-7 mr-6" src="../../assets/Nav-Icons/budget-icon.svg" alt="">
                     <span>Budgets</span>
                 </router-link>
-                <a href="#" class="flex items-center w-max my-8 hover:text-primaryGreen">
-                    <img class="w-5 h-5 mr-3 text-white" src="../../assets/Nav-Icons/goals-icon.svg" alt="">
+                <a href="#" class="flex my-10">
+                    <img class="w-7 h-7 mr-6" src="../../assets/Nav-Icons/goals-icon.svg" alt="">
                     <span>Goals</span>
                 </a>
-                <a href="#" class="flex items-center w-max my-8 hover:text-primaryGreen">
-                    <img class="w-5 h-5 mr-3 text-white" src="../../assets/Nav-Icons/notifications-icon.svg" alt="">
+                <a href="#" class="flex my-10">
+                    <img class="w-7 h-7 mr-6" src="../../assets/Nav-Icons/notifications-icon.svg" alt="">
                     <span>Notifications</span>
                 </a>
-                <a href="#" class="flex items-center w-max my-8 hover:text-primaryGreen">
-                    <img class="w-5 h-5 mr-3 text-white" src="../../assets/Nav-Icons/settings-icon.svg" alt="">
+                <a href="#" class="flex my-10">
+                    <img class="w-7 h-7 mr-6" src="../../assets/Nav-Icons/settings-icon.svg" alt="">
                     <span>Settings</span>
                 </a>
             </div>
 
             <button 
                 @click="logoutHandler()" 
-                class=" w-max flex items-center px-9 hover:text-primaryGreen"
+                class=" px-5 w-full flex hover:text-primaryGreen"
             >
-                <img class="w-5 h-5 mr-3" src="../../assets/Nav-Icons/logout-icon.svg" alt="">
-                <span>Log out</span>
+                <img class="w-7 h-7 mr-6" src="../../assets/Nav-Icons/logout-icon.svg" alt="">
+                <span>Logout</span>
             </button>
-        </nav>        
-
+        </nav>
     </div>
 
-    <div v-else-if="isMenuOpen === false" class="w-16 h-screen fixed z-40 left-0 top-0 bg-black border-white border-r-2">
+    <div v-else-if="isMenuOpen === false" class="px-5 -xs:hidden h-screen fixed z-40 left-0 top-0 bg-black border-white border-r-2">
         <nav class="h-full pt-7 pb-[10vh] flex flex-col items-center justify-between relative">
             <div><!-- Placeholder DIV --></div>
 

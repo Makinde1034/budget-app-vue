@@ -1,8 +1,8 @@
 <template>
   <NavBar />
-  <div class="h-[100vh] flex flex-col pt-40 px-4 pl-20 items-center">
-    <form @submit.prevent="createBudgetHandler" class="lg:w-[30%]" action="">
-      <h3 class="header mb-5">Create Budget</h3>
+  <div class="min-h-[100vh] py-32 px-8 xs:pl-24">
+    <form @submit.prevent="createBudgetHandler" class=" sm:w-[450px] mx-auto" action="">
+      <h3 class="text-4xl text-white font-bold mb-12">Create Budget</h3>
       <input
         v-model="createBudgetRequestData.name"
         class="input mb-6"

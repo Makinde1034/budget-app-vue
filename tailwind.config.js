@@ -12,7 +12,11 @@ module.exports = {
       }
     },
     screens: {
-      'sm': '640px',
+      'xs': {'min': '525px'},
+      '-xs': {'max': '525px'},
+
+      'sm': {'min': '640px'},
+      '-sm': {'max': '640px'},
 
       'md': {'min' : '800px'},
       '-md': {'max': '800px'},

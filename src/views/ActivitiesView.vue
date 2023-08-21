@@ -58,16 +58,13 @@
 
 <script lang="ts">
 import Button from '../components/Button/Button.vue'
-//import BudgetCard from '../components/BudgetCard/BudgetCard.vue'
 import { defineComponent, ref } from 'vue'
 import { fetchBudgetActivities, fetchBudget } from '../services/queries'
 import { useQuery } from 'vue-query'
 import { useRoute } from 'vue-router'
 import { formatNumber, numberWithCommas } from '../helpers/number'
 import UpdateBudgetModal from '../components/Modals/UpdateBudgetModal.vue'
-//import { useMutation } from 'vue-query'
 import { getDaysLeft } from '@/helpers/date'
-import NavBar from '../components/Nav/Nav.vue'
 
 export default defineComponent({
   name: 'Budgets',

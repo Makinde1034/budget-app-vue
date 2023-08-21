@@ -10,7 +10,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <div class="px-4 pb-28 pl-20 text-lg text-white">
+  <div class="px-4 pb-28 xs:pl-20 text-lg text-white">
     <section class=" h-screen flex flex-col justify-center items-center">
       <h1 class="text-center font-semibold text-8xl -md:text-6xl mb-10"><span class="text-primaryGreen">B</span>udgetBuddy</h1>
       <h3 class="text-3xl text-center font-bold">
@@ -18,7 +18,7 @@ export default defineComponent({
         <span class="text-primaryGreen">Budgeting </span>Companion
       </h3>
       <p class="leading-6 text-center my-5">
-        Stay on top of your spending habits with our user-friendly interface. <br> 
+        Stay on top of your spending habits with our user-friendly interface. <br class="-sm:hidden"> 
         Categorize expenses, set budgets, and monitor your financial progress.
       </p>
       <router-link
@@ -30,9 +30,6 @@ export default defineComponent({
     </section>
 
     <section class="px-5 max-w-[900px] mx-auto">
-      <h2 class="mb-10 text-6xl text-center">About <span class="text-primaryGreen">B</span>udgetBuddy</h2>
-      <p>BudgetBuddy is a user-centric application designed for seamless personal finance management. Its intuitive interface empowers you to effortlessly monitor expenses, establish budgets, define financial objectives, and generate insightful reports. The focus is on maintaining financial control and enabling well-informed monetary choices.</p>
-
       <div class="mt-32 tracking-wide">
         <div class="grid grid-cols-2 -md:grid-cols-1 gap-x-10 mb-40 place-items-center">
           <div class=" -md:mb-10">

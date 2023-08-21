@@ -1,6 +1,6 @@
 <template>
   <nav class=" w-full flex justify-between bg-black text-white fixed z-50" >
-    <div :class="{ isMenuOpen: 'bg-black border-r-2 border-white rounded-tr-3xl' }" class="w-60 flex items-center px-2">
+    <div class="w-60 flex items-center px-2">
       <button 
         @click="() => {isMenuOpen = !isMenuOpen}" 
         :class="{ 'bg-white bg-opacity-20': isMenuOpen }"
