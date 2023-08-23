@@ -53,6 +53,9 @@ export default {
       }
     })
   },
+  deleteBudget() {
+    
+  },
   register(data: RegisterRequest) {
     return axios({
       url: `${BASE_URL}/register`,

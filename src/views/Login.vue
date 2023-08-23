@@ -16,7 +16,11 @@
         class="input"
         type="password"
       />
-      <Button :loading="isLoading" width="100%" text="Login" />
+      <Button :loading="isLoading" width="100%" text="Sign In" />
+      <div class="flex justify-between text-white mt-5 px-1">
+        <p>Forgot Password?</p>
+        <p class=""><router-link to="/register">Sign Up</router-link></p>
+      </div>
       <p class="text-[#ff3333] mt-5 text-sm text-center" v-if="error">{{ error }}</p>
     </form>
   </div>
@@ -60,6 +64,6 @@ export default defineComponent({
     login() {
       this.mutate(this.loginRequest)
     }
-  }
+  },
 })
 </script>

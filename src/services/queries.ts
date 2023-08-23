@@ -6,12 +6,11 @@ import type {
   RegisterRequest,
   updateBudgetRequest
 } from './types'
-import { handleInvalidToken } from '@/helpers/navigation'
+//import { handleInvalidToken } from '@/helpers/navigation'
 
 export const fetchBudgets = async (): Promise<FetchUserBudgetResponse> => {
   try {
     const res = await api.getUserBudgets()
-    //console.log(res.data)
     return res.data
   } catch (err:any) {
     throw new Error(err)
@@ -39,7 +38,6 @@ export const fetchBudgetActivities = async (id: string) => {
 export const fetchBudget = async (id: string): Promise<BudgetCardProps> => {
   try {
     const res = await api.getBudget(id)
-  
     return res.data
   } catch (err:any) {
     throw new Error(err)
@@ -49,11 +47,14 @@ export const fetchBudget = async (id: string): Promise<BudgetCardProps> => {
 export const updateBudget = async (data: updateBudgetRequest) => {
   try {
     const res = await api.updateBudget(data)
-  
     return res.data
   } catch (err:any) {
     throw new Error(err)
   }
+}
+
+export const deleteBudget = () => {
+  console.log('deleted')
 }
 
 export const register = async (data: RegisterRequest) => { 

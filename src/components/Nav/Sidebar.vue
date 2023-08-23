@@ -44,11 +44,11 @@
         </nav>
     </div>
 
-    <div v-else-if="isMenuOpen === false" class="px-5 -xs:hidden h-screen fixed z-40 left-0 top-0 bg-black border-white border-r-2">
-        <nav class="h-full pt-7 pb-[10vh] flex flex-col items-center justify-between relative">
+    <div v-else-if="isMenuOpen === false" class="xs:px-5 -xs:h-16 -xs:w-full h-screen fixed z-40 left-0 -xs:bottom-0 xs:top-0 bg-black border-white border-r-2 -xs:border-t-2">
+        <nav class="h-full xs:pt-7 xs:pb-[10vh] -xs:px-[4%] flex xs:flex-col justify-between items-center relative">
             <div><!-- Placeholder DIV --></div>
 
-            <div class="">
+            <div class="w-full -xs:flex justify-between">
                 <router-link 
                     to="/" 
                     @click="$emit('handleMenuClose')"
@@ -76,7 +76,7 @@
 
             <button 
                 @click="logoutHandler()" 
-                class=" w-max flex hover:text-primaryGreen"
+                class="-xs:hidden w-max flex hover:text-primaryGreen"
             >
                 <img class="w-7 h-7" src="../../assets/Nav-Icons/logout-icon.svg" alt="">
             </button>

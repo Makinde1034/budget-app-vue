@@ -29,7 +29,7 @@
         
         <div v-show="isoptionsOpen" @click.stop="handleButtonClick" class="border border-white rounded-lg">
           <p class="hover:bg-white hover:text-black py-2 px-3 border-b">Pin</p>
-          <p class="hover:bg-white hover:text-black py-2 px-3">Delete</p>
+          <p @click="deleteBudget" class="hover:bg-white hover:text-black py-2 px-3">Delete</p>
         </div>
       </div>
 
@@ -41,6 +41,7 @@
 import { defineComponent } from 'vue'
 import { getDaysLeft } from '../../helpers/date'
 import { numberWithCommas } from '../../helpers/number'
+import { deleteBudget } from '@/services/queries'
 
 export default defineComponent({
   name: 'BudgetCard',
@@ -95,6 +96,10 @@ export default defineComponent({
     handleButtonClick(event: Event) {
       event.stopPropagation() // Stops propagation to the prevent routing
     },
+    deleteBudget() {
+      //console.log('pppp')
+      return deleteBudget()
+    }
   }
 })
 </script>

@@ -1,8 +1,8 @@
 <template>
   <div
-    :class="`w-[100%] px-5 ease-linear duration-300 gr absolute z-50 ${
+    :class="`w-full left-0 px-4 xs:pl-20 ease-linear duration-300 gr fixed z-50 ${
       isModalOpen ? 'visible opacity-100' : 'invisible opacity-0'
-    } flex-center-x items-center top-0 h-[100vh] bg-whiyte`"
+    } flex-center-x items-center top-0 min-h-[100vh]`"
   >
     <div>
       <div
@@ -28,7 +28,7 @@
           :disabled="isButtonDisabled"
           :onClick="submitHandler"
           width="100%"
-          text="Submit"
+          text="Add"
           :loading="isLoading"
         />
         <p class="text-xs text-center text-[#ff3333] mt-5" v-if="error">{{ error }}</p>

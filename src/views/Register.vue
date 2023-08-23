@@ -17,7 +17,7 @@
         type="password"
       />
       <Button :loading="isLoading" width="100%" text="Register" />   
-      <p class="text-center text-white text-sm mt-5">Already have an account?<router-link to="/login"> Login</router-link></p>
+      <p class="text-center text-white mt-5">Have an account? <router-link to="/login">Sign In</router-link></p>
       <p class="text-[#ff3333] mt-5 text-sm text-center" v-if="error">{{ error }}</p>
     </form>
   </div>

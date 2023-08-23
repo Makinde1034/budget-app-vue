@@ -20,8 +20,6 @@
         class="input mb-6"
         type="text"
         onfocus="(this.type='date')"
-        @input="handleMinDate"
-        v-bind:min="minDate"
         placeholder="Start date"
       />
       <input
@@ -29,6 +27,8 @@
         class="input"
         type="text"
         onfocus="(this.type='date')"
+        @input="handleMinDate"
+        v-bind:min="minDate"
         placeholder="End date"
       />
       <p class="text-white mt-5">Customize budget</p>
