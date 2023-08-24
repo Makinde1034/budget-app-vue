@@ -1,25 +1,33 @@
 <template>
   <div class="min-h-[100vh] flex flex-col items-center xs:pl-20 px-4 py-24">
-    <section v-if="isLoading" class="w-full lg:px-4 py-6">
+    <section v-if="isLoading" class="w-full px-4 py-6">
       <h3 class="text-5xl text-white font-bold mb-12">Your Budgets</h3>
       <div class=" w-[100%] mt-5 gap-5 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
         <div class="max-w-[400px] w-full mx-auto" v-for="(item, index) in [...Array(6)]" :key="index"><SkeletonLoader /></div>
       </div>
     </section>
+
     <section
       class="h-[100%] flex flex-col items-center justify-center"
       v-else-if="transformedBudgetData.length === 1"
     >
       <h3 class="text-white font-bold">You have no budget yet.</h3>
       <p class="text-white font-light">Start creating budgets and tracking your finances</p>
-      <router-link to="/create"> <Button text="Create budget" /></router-link>
+      <router-link to="/create"> 
+        <Button text="Create budget"/>
+      </router-link>
     </section>
+
     <section v-else-if="isError">
       <p>An error occured</p>
-      v
     </section>
+
     <section v-else class="px-4 py-6 w-full ">
-      <h3 class=" mb-12 text-5xl text-white font-bold">Your Budgets</h3>
+      <div class="mb-12 md:flex justify-between">
+        <h3 class=" mb-4 text-5xl text-white font-bold">Your Budgets</h3>
+        <input class="h-12 w-60 p-3 -md:hidden" type="text" placeholder="Search budgets">        
+      </div>
+
       <div class="grid w-[100%] justify-center mt-5 gap-5 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
         <div class="max-w-[400px] w-full mx-auto" v-for="(item, key) in transformedBudgetData" :key="key">
           <BudgetCard

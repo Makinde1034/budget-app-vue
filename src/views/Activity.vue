@@ -34,18 +34,17 @@
               <p class="text-white text-sm">{{ nairaDisplay(item.amount) }}</p>
             </div>
           </div>
-          <div class="gr relative flex-center-x items-center cursor-pointer p-3 rounded-3xl">
-            <p class="text-white text-xs mr-3">Category</p>
-            <img class="h-2" src="../assets/arrowDown.svg" alt="" />
+          <div class="gr h-max text-white text-center py-2 px-4 rounded-3xl">
+            <p>{{ item.category }}</p>
           </div>
         </div>
       </div>
-      <div class="flex-center-x mt-16">
+      <div class="flex-center-x mt-12">
         <Button :onClick="openModal" text="Update" />
       </div>
     </div>
 
-    <div v-else-if="isLoading" class="w-full max-w-[450px] mx-auto rounded-2xl border-primaryGreen border p-10">
+    <div v-else-if="isLoading" class="w-full max-w-[450px] mx-auto animate-pulse rounded-2xl border-primaryGreen border p-10">
       <div class="w-full flex-center-y">
         <div class="max-w-[300px] w-full h-10 rounded-3xl gr"></div>
         <div class="flex-center-x my-5 items-center rounded-3xl gr">
@@ -77,7 +76,7 @@
           </div>
         </div>
       </div>
-      <div class=" w-40 rounded-3xl h-14 mx-auto mt-16 gr">
+      <div class=" w-40 rounded-full h-14 mx-auto mt-12 gr">
       </div>
     </div>
 
@@ -161,7 +160,6 @@ export default defineComponent({
       refetchBudget
     }
   },
-
   computed: {
     getAmountRemaining() {
       return formatNumber(
@@ -189,7 +187,6 @@ export default defineComponent({
       return percentage
     }
   },
-
   methods: {
     amountLeftInPercentage() {
       return `${this.getAmountLeftPercentage}%`
@@ -208,6 +205,7 @@ export default defineComponent({
     setTimeout(() => {
       this.isLoading = false
     }, 2000)
+    //console.log(this.data)
   },
 })
 </script>

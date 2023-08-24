@@ -1,5 +1,5 @@
 <template>    
-    <div v-if="!isMenuOpen === false" class="h-screen fixed z-40 left-0 top-0 text-white text-3xl bg-black border-white border-r-2">
+    <div v-if="!isMenuOpen === false" class="h-screen fixed z-40 left-0 top-0 text-white text-3xl bg-black border-white xs:border-r-2">
         <nav class="h-full leading-[28px] pt-7 pb-[10vh] flex flex-col items-center justify-between relative">
             <div><!-- Placeholder DIV --></div>
 

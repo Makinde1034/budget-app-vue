@@ -1,14 +1,15 @@
 <template>
   <div @click="createBudgetHandler" v-if="cardIndex === lastIndex">
-    <div class="budgetCard flex justify-center items-center h-[225px]">
+    <div class="budgetCard flex justify-center items-center h-[246px]">
       <img class="h-6" src="../../assets/addicon.svg" alt="" />
     </div>
   </div>
+
   <div @click="handleActiviteisNavigation" v-else>
     <div class="budgetCard text-white relative">
-      <h3 class="font-medium text-xl mb-1">{{ name }}</h3>
-      <p class="text-[#DCDCDC] text-sm mb-12">{{ computedDaysLeft }} days left</p>
-      <p class="font-medium">{{ amountRemaining }}</p>
+      <h3 class="font-medium text-3xl mb-1">{{ name }}</h3>
+      <p class="text-[#DCDCDC] text-sm mb-12">{{ computedDaysLeft }} {{ computedDaysLeft == 1 ? 'day' : 'days' }} left</p>
+      <p class="font-medium text-lg">{{ amountRemaining }}</p>
       <p class="text-[#DCDCDC]">remaining</p>
       <div class="h-6 rounded-xl mt-5 w-[100%] gr">
         <div
@@ -16,21 +17,21 @@
           :class="` h-[100%] ${getBarRightBorderRadius()}  rounded-tl-3xl rounded-bl-3xl`"
         ></div>
       </div>
-      <div class="flex flex-col items-end absolute top-5 right-7">
+      <div class="flex flex-col items-end absolute top-5 right-4">
         <button @click.stop="
             () => {
               isoptionsOpen = !isoptionsOpen
             }
           "
-          class="w-9 h-9 focus:bg-white focus:bg-opacity-20 flex justify-center rounded-full"
+          class="w-9 h-9 hover:bg-white hover:bg-opacity-20 flex justify-center rounded-full"
         >
           <img class="w-8" src="../../assets/ellipsis.svg" alt="">
         </button>     
         
-        <div v-show="isoptionsOpen" @click.stop="handleButtonClick" class="border border-white rounded-lg">
+        <!--<div v-show="isoptionsOpen" @click.stop="handleButtonClick" class="border border-white rounded-lg">
           <p class="hover:bg-white hover:text-black py-2 px-3 border-b">Pin</p>
           <p @click="deleteBudget" class="hover:bg-white hover:text-black py-2 px-3">Delete</p>
-        </div>
+        </div>-->
       </div>
 
     </div>

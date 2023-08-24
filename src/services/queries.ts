@@ -47,6 +47,7 @@ export const fetchBudget = async (id: string): Promise<BudgetCardProps> => {
 export const updateBudget = async (data: updateBudgetRequest) => {
   try {
     const res = await api.updateBudget(data)
+    console.log(res.data)
     return res.data
   } catch (err:any) {
     throw new Error(err)
