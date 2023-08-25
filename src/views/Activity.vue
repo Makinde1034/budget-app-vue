@@ -35,7 +35,7 @@
             </div>
           </div>
           <div class="gr h-max text-white text-center py-2 px-4 rounded-3xl">
-            <p>{{ item.category }}</p>
+            <p>category</p>
           </div>
         </div>
       </div>
@@ -103,7 +103,7 @@ import UpdateBudgetModal from '../components/Modals/UpdateBudgetModal.vue'
 import { getDaysLeft } from '@/helpers/date'
 
 export default defineComponent({
-  name: 'Budgets',
+  name: 'Activity',
   components: { Button, UpdateBudgetModal },
   data() {
     return {

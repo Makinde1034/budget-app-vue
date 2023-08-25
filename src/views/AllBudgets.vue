@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-[100vh] flex flex-col items-center xs:pl-20 px-4 py-24">
     <section v-if="isLoading" class="w-full px-4 py-6">
-      <h3 class="text-5xl text-white font-bold mb-12">Your Budgets</h3>
+      <h3 class="text-6xl text-white font-bold mb-12">Your Budgets</h3>
       <div class=" w-[100%] mt-5 gap-5 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
         <div class="max-w-[400px] w-full mx-auto" v-for="(item, index) in [...Array(6)]" :key="index"><SkeletonLoader /></div>
       </div>
@@ -24,8 +24,10 @@
 
     <section v-else class="px-4 py-6 w-full ">
       <div class="mb-12 md:flex justify-between">
-        <h3 class=" mb-4 text-5xl text-white font-bold">Your Budgets</h3>
-        <input class="h-12 w-60 p-3 -md:hidden" type="text" placeholder="Search budgets">        
+        <h3 class=" mb-4 text-6xl text-white font-bold">Your Budgets</h3>
+        <router-link to="/search">
+          <input  class="h-12 w-60 p-3 -md:hidden" type="text" placeholder="Search budgets">            
+        </router-link>
       </div>
 
       <div class="grid w-[100%] justify-center mt-5 gap-5 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
@@ -41,6 +43,7 @@
             :cardIndex="key"
             :ID="item.ID"
             :color="item.color"
+            :newBudgetOption=true
           />
         </div>
       </div>
@@ -57,7 +60,7 @@ import { useQuery } from 'vue-query'
 import SkeletonLoader from '../components/Loaders/SkeletonLoader.vue'
 
 export default defineComponent({
-  name: 'Budgets',
+  name: 'AllBudgets',
   components: { Button, BudgetCard, SkeletonLoader },
 
   setup() {

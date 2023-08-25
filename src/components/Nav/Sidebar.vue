@@ -24,10 +24,14 @@
                     <img class="w-7 h-7 mr-6" src="../../assets/Nav-Icons/goals-icon.svg" alt="">
                     <span>Goals</span>
                 </a>
-                <a href="#" class="flex my-10">
+                <router-link 
+                    to="/notifications" 
+                    @click="$emit('handleMenuClose')"
+                    class="flex items-center my-10"
+                >
                     <img class="w-7 h-7 mr-6" src="../../assets/Nav-Icons/notifications-icon.svg" alt="">
                     <span>Notifications</span>
-                </a>
+                </router-link>
                 <a href="#" class="flex my-10">
                     <img class="w-7 h-7 mr-6" src="../../assets/Nav-Icons/settings-icon.svg" alt="">
                     <span>Settings</span>
@@ -66,9 +70,13 @@
                 <a href="#" class="block my-10">
                     <img class="w-7 h-7" src="../../assets/Nav-Icons/goals-icon.svg" alt="">
                 </a>
-                <a href="#" class="block my-10">
+                <router-link 
+                    to="/notifications" 
+                    @click="$emit('handleMenuClose')"
+                    class="block my-10"
+                >
                     <img class="w-7 h-7" src="../../assets/Nav-Icons/notifications-icon.svg" alt="">
-                </a>
+                </router-link>
                 <a href="#" class="block my-10">
                     <img class="w-7 h-7" src="../../assets/Nav-Icons/settings-icon.svg" alt="">
                 </a>

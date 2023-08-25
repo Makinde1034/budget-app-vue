@@ -1,37 +1,39 @@
 <template>
-  <div @click="createBudgetHandler" v-if="cardIndex === lastIndex">
-    <div class="budgetCard flex justify-center items-center h-[246px]">
-      <img class="h-6" src="../../assets/addicon.svg" alt="" />
-    </div>
+  <div v-if="cardIndex === lastIndex">
+    <div @click="createBudgetHandler" v-if=" newBudgetOption ">
+      <div class="budgetCard flex justify-center items-center h-[246px]">
+        <img class="h-6" src="../../assets/addicon.svg" alt="" />
+      </div>
+    </div>    
   </div>
 
   <div @click="handleActiviteisNavigation" v-else>
-    <div class="budgetCard text-white relative">
-      <h3 class="font-medium text-3xl mb-1">{{ name }}</h3>
-      <p class="text-[#DCDCDC] text-sm mb-12">{{ computedDaysLeft }} {{ computedDaysLeft == 1 ? 'day' : 'days' }} left</p>
-      <p class="font-medium text-lg">{{ amountRemaining }}</p>
-      <p class="text-[#DCDCDC]">remaining</p>
+    <div class="budgetCard group text-white relative">
+      <div class="pr-8">
+        <h3 class="font-medium text-3xl mb-2">{{ name }}</h3>
+        <p class="text-[#DCDCDC] text-sm mb-12">{{ computedDaysLeft }} {{ computedDaysLeft == 1 ? 'day' : 'days' }} left</p>
+        <p class="font-medium text-lg">{{ amountRemaining }}</p>
+        <p class="text-[#DCDCDC]">remaining</p>        
+      </div>
+
       <div class="h-6 rounded-xl mt-5 w-[100%] gr">
         <div
           :style="{ width: amountLeftInPercentage(), backgroundColor: color }"
           :class="` h-[100%] ${getBarRightBorderRadius()}  rounded-tl-3xl rounded-bl-3xl`"
         ></div>
       </div>
-      <div class="flex flex-col items-end absolute top-5 right-4">
-        <button @click.stop="
-            () => {
-              isoptionsOpen = !isoptionsOpen
-            }
-          "
-          class="w-9 h-9 hover:bg-white hover:bg-opacity-20 flex justify-center rounded-full"
-        >
-          <img class="w-8" src="../../assets/ellipsis.svg" alt="">
-        </button>     
-        
-        <!--<div v-show="isoptionsOpen" @click.stop="handleButtonClick" class="border border-white rounded-lg">
-          <p class="hover:bg-white hover:text-black py-2 px-3 border-b">Pin</p>
-          <p @click="deleteBudget" class="hover:bg-white hover:text-black py-2 px-3">Delete</p>
-        </div>-->
+      <div class=" hidden group-hover:flex flex-col items-end absolute top-5 right-2">
+        <button class="hover:bg-white hover:bg-opacity-10 mb-1 h-10 w-10 flex items-center justify-center rounded-full">
+          <img class=" w-6 -rotate-45" src="../../assets/pin.svg" alt="">
+        </button>
+
+        <button class="hover:bg-white hover:bg-opacity-10 mb-1 h-10 w-10 flex items-center justify-center rounded-full">
+          <img class="w-6" src="../../assets/archive.svg" alt="">
+        </button>
+
+        <button class="hover:bg-white hover:bg-opacity-10 h-10 w-10 flex items-center justify-center rounded-full">
+          <img class=" w-6" src="../../assets/delete.svg" alt="">
+        </button>
       </div>
 
     </div>
@@ -56,7 +58,8 @@ export default defineComponent({
     cardIndex: Number,
     lastIndex: Number,
     ID: String,
-    color: String
+    color: String,
+    newBudgetOption: Boolean,
   },
   data() {
     return {
