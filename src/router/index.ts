@@ -1,7 +1,5 @@
 import { createRouter, createWebHistory, type RouteLocationNormalized } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import CreateView from '../views/BudgetView.vue'
-import LoginView from '../views/Login.vue'
+import Home from '../views/Home.vue'
 import api from '../services/index'
 
 const handleAuthorizedRouteNavigation = async (
@@ -32,7 +30,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: Home
     },
     {
       path: '/about',
@@ -45,7 +43,7 @@ const router = createRouter({
     {
       path: '/budget',
       name: 'budget',
-      component: () => import('../views/BudgetView.vue'),
+      component: () => import('../views/AllBudgets.vue'),
     },
     {
       path: '/create',
@@ -56,7 +54,7 @@ const router = createRouter({
     {
       path: '/activities/:id',
       name: 'activities',
-      component: () => import('../views/ActivitiesView.vue'),
+      component: () => import('../views/Activity.vue'),
   
     },
     {
@@ -68,6 +66,16 @@ const router = createRouter({
       path: '/login',
       name: 'login',
       component: () => import('../views/Login.vue')
+    },
+    {
+      path: '/notifications',
+      name: 'notifications',
+      component: () => import('../views/Notifications.vue')
+    },
+    {
+      path: '/search' ,
+      name: 'search',
+      component: () => import('../views/Search.vue')
     }
   ]
 })

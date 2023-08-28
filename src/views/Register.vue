@@ -1,5 +1,5 @@
 <template>
-  <div class="page pt-32 px-4 lg:pl-64">
+  <div class="h-screen flex-center-x pt-32 px-4 xs:pl-20">
     <form @submit.prevent="register" class="w-[35%] min-w-[350px]">
       <h1 class="text-center text-white text-2xl mb-5">Let's get started</h1>
       <input
@@ -17,11 +17,7 @@
         type="password"
       />
       <Button :loading="isLoading" width="100%" text="Register" />   
-      <router-link to="/login"
-        ><p class="text-center text-white text-xs mt-5">
-          Already have an account ? Login
-        </p></router-link
-      >
+      <p class="text-center text-white mt-5">Have an account? <router-link to="/login">Sign In</router-link></p>
       <p class="text-[#ff3333] mt-5 text-sm text-center" v-if="error">{{ error }}</p>
     </form>
   </div>
@@ -32,7 +28,6 @@ import { defineComponent } from 'vue'
 import { useMutation } from 'vue-query'
 import Button from '@/components/Button/Button.vue'
 import { register } from '@/services/queries'
-import api from '../services/index'
 
 export default defineComponent({
   components: { Button },

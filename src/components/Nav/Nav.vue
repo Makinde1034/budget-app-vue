@@ -1,10 +1,10 @@
 <template>
-  <nav class=" w-full flex justify-between  text-white fixed z-50" >
-    <div :class="{ isMenuOpen: 'bg-black border-r-2 border-white rounded-tr-3xl' }" class="w-60 flex items-center px-2">
+  <nav class=" w-full flex justify-between bg-black text-white fixed z-50" >
+    <div class="w-60 flex items-center px-2">
       <button 
         @click="() => {isMenuOpen = !isMenuOpen}" 
         :class="{ 'bg-white bg-opacity-20': isMenuOpen }"
-        class="z-[1000] rounded-full flex-shrink-0 w-9 h-9 lg:hidden" 
+        class="z-[1000] rounded-full flex-shrink-0 w-10 h-10 mr-6" 
         ref="toggleButton"
       >
         <div class="w-[17px] m-auto">
@@ -13,10 +13,9 @@
           <div class="w-full rounded bg-white h-[2px]"></div>
         </div>
       </button>   
-
       
       <router-link to="/">
-        <span class="text-white text-2xl pl-2"><span class="text-primaryGreen">B</span>udgetBuddy</span>
+        <span class="text-white text-2xl"><span class="text-primaryGreen">B</span>udgetBuddy</span>
       </router-link>
     </div>
 
@@ -27,11 +26,9 @@
   </nav>
 
   <div
-    class="lg:hidden"
     ref="sidebarContainer" 
-    v-if="isMenuOpen" 
   >
-    <Sidebar @handleMenuClose="handleMenuClose"/>
+    <Sidebar :isMenuOpen="isMenuOpen" @handleMenuClose="handleMenuClose"/>
   </div>
 </template>
 
